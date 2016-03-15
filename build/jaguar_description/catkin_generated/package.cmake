@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "jaguar_description")
+set(jaguar_description_MAINTAINER "Chatzinikolaidis Iordanis <lohatzis@gmail.com>")
+set(jaguar_description_DEPRECATED "")
+set(jaguar_description_VERSION "0.0.1")
+set(jaguar_description_BUILD_DEPENDS "urdf" "xacro")
+set(jaguar_description_RUN_DEPENDS "urdf" "xacro")
+set(jaguar_description_BUILDTOOL_DEPENDS "catkin")

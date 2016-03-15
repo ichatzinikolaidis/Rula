@@ -1,2 +1,2 @@
-
+jaguar_description
 -DCATKIN_DEVEL_PREFIX=/home/iordanis/Roula/devel -DCMAKE_INSTALL_PREFIX=/home/iordanis/Roula/install -G Unix Makefiles
