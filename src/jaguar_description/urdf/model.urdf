@@ -20,13 +20,15 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <!-- Included URDF/XACRO Files -->
   <!--
   <xacro:include filename="$(find husky_description)/urdf/accessories/kinect_camera.urdf.xacro"/>
-  <xacro:include filename="$(find husky_description)/urdf/accessories/sick_lms1xx_mount.urdf.xacro"/>
+  <xacro:include filename="$(find jaguar_description)/urdf/sick_lms1xx_mount.urdf.xacro"/>
   <xacro:include filename="$(find husky_description)/urdf/accessories/sensor_arch.urdf.xacro"/>
   -->
   <!-- Wheel Properties -->
   <!-- TODO -->
   <!-- TODO -->
   <!-- Base Size -->
+  <!-- TODO -->
+  <!-- TODO -->
   <!-- Wheel Mounting Positions -->
   <!-- TODO -->
   <!-- Base link is the center of the robot's bottom plate -->
@@ -49,14 +51,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
       </geometry>
     </collision>
   </link>
-  <!-- Base footprint is on the ground under the robot -->
-  <link name="base_footprint"/>
-  <joint name="base_footprint_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.0"/>
-    <!-- TODO -->
-    <parent link="base_link"/>
-    <child link="base_footprint"/>
-  </joint>
   <!-- Interial link stores the robot's inertial information -->
   <link name="inertial_link">
     <inertial>
@@ -73,11 +67,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
     <parent link="base_link"/>
     <child link="inertial_link"/>
   </joint>
-  <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
-  <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
+  <!-- IMU Link's exact position is unnecessary thus placed at the center of the platform.-->
   <link name="imu_link"/>
   <joint name="imu_joint" type="fixed">
-    <origin rpy="0 -1.5708 3.1416" xyz="0 0 0.149"/>
+    <origin rpy="0 0 0" xyz="0 0 0.175"/>
     <!-- TODO -->
     <parent link="base_link"/>
     <child link="imu_link"/>
@@ -231,12 +224,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
     </joint>
   </transmission>
-  <!--
+  <!-- Laser
   <sick_lms1xx_mount prefix="base" topic="scan"/>
   <joint name="laser_mount_joint" type="fixed">
     <origin xyz="$(optenv HUSKY_LMS1XX_XYZ 0.2206 0.0 0.00635)" rpy="$(optenv HUSKY_LMS1XX_RPY 0.0 0.0 0.0)" />
     <parent link="top_plate_link" />
     <child link="base_laser_mount" />
   </joint>
--->
+  -->
 </robot>

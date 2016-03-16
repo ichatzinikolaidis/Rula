@@ -18,7 +18,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <xacro:include filename="$(find jaguar_description)/urdf/wheel.urdf.xarco"/>
   <!--
   <xacro:include filename="$(find husky_description)/urdf/accessories/kinect_camera.urdf.xacro"/>
-  <xacro:include filename="$(find husky_description)/urdf/accessories/sick_lms1xx_mount.urdf.xacro"/>
+  <xacro:include filename="$(find jaguar_description)/urdf/sick_lms1xx_mount.urdf.xacro"/>
   <xacro:include filename="$(find husky_description)/urdf/accessories/sensor_arch.urdf.xacro"/>
   -->
 
@@ -29,8 +29,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <xacro:property name="wheel_radius" value="0.13" /> <!-- TODO -->
 
   <!-- Base Size -->
-  <property name="distance_from_ground" value="0.09" />
-  <property name="wheel_base_offset" value="0.03" />
+  <property name="distance_from_ground" value="0.09" /> <!-- TODO -->
+  <property name="wheel_base_offset" value="0.03" /> <!-- TODO -->
   <property name="base_x_size" value="${0.615-2*wheel_base_offset}" />
   <property name="base_y_size" value="${0.573-wheel_length}" />
   <property name="base_z_size" value="${0.265-distance_from_ground}" />
@@ -59,15 +59,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
     </collision>
   </link>
 
-  <!-- Base footprint is on the ground under the robot -->
-  <link name="base_footprint"/>
-
-  <joint name="base_footprint_joint" type="fixed">
-    <origin xyz="0 0 ${wheel_vertical_offset - wheel_radius}" rpy="0 0 0" /> <!-- TODO -->
-    <parent link="base_link" />
-    <child link="base_footprint" />
-  </joint>
-
   <!-- Interial link stores the robot's inertial information -->
   <link name="inertial_link">
     <inertial>
@@ -76,18 +67,16 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
       <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" /> <!-- TODO -->
     </inertial>
   </link>
-
   <joint name="inertial_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="inertial_link" />
   </joint>
 
-  <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
-  <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
+  <!-- IMU Link's exact position is unnecessary thus placed at the center of the platform.-->
   <link name="imu_link"/>
   <joint name="imu_joint" type="fixed">
-    <origin xyz="$(optenv HUSKY_IMU_XYZ 0 0 0.149)" rpy="$(optenv HUSKY_IMU_RPY 0 -1.5708 3.1416)" /> <!-- TODO -->
+    <origin xyz="0 0 ${base_z_size}" rpy="0 0 0" /> <!-- TODO -->
     <parent link="base_link" />
     <child link="imu_link" />
   </joint>
@@ -105,12 +94,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <xacro:jaguar_wheel wheel_prefix="rear_right">
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:jaguar_wheel>
-  <!--
+  
+  <!-- Laser
   <sick_lms1xx_mount prefix="base" topic="scan"/>
   <joint name="laser_mount_joint" type="fixed">
     <origin xyz="$(optenv HUSKY_LMS1XX_XYZ 0.2206 0.0 0.00635)" rpy="$(optenv HUSKY_LMS1XX_RPY 0.0 0.0 0.0)" />
     <parent link="top_plate_link" />
     <child link="base_laser_mount" />
   </joint>
--->
+  -->
 </robot>
