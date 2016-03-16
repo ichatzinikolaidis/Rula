@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/iordanis/Roula/src/jaguar_description/src/parser.cpp
+urdf/model.h
+-
+ros/ros.h
+/home/iordanis/Roula/src/jaguar_description/src/ros/ros.h
+

@@ -2,7 +2,7 @@
 <!--
 Software License Agreement (BSD)
 
-\file      wheel.urdf.xacro
+\file      jaguar.urdf.xacro
 \authors   Iordanis Chatzinikolaidis <lohatzis@gmail.com>
 \copyright Copyright (c) 2016, All rights reserved.
 
@@ -15,7 +15,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 <robot name="jaguar_robot" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- Included URDF/XACRO Files -->
-  <xacro:include filename="$(find husky_description)/urdf/wheel.urdf.xacro" />
+  <xacro:include filename="$(find jaguar_description)/urdf/wheel.urdf.xarco"/>
   <!--
   <xacro:include filename="$(find husky_description)/urdf/accessories/kinect_camera.urdf.xacro"/>
   <xacro:include filename="$(find husky_description)/urdf/accessories/sick_lms1xx_mount.urdf.xacro"/>
@@ -24,96 +24,93 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
   <property name="M_PI" value="3.14159"/>
 
+  <!-- Wheel Properties -->
+  <xacro:property name="wheel_length" value="0.09" /> <!-- TODO -->
+  <xacro:property name="wheel_radius" value="0.13" /> <!-- TODO -->
+
   <!-- Base Size -->
-  <property name="base_x_size" value="0.615" />
-  <property name="base_y_size" value="0.573" />
-  <property name="base_z_size" value="0.265" />
+  <property name="distance_from_ground" value="0.09" />
+  <property name="wheel_base_offset" value="0.03" />
+  <property name="base_x_size" value="${0.615-2*wheel_base_offset}" />
+  <property name="base_y_size" value="${0.573-wheel_length}" />
+  <property name="base_z_size" value="${0.265-distance_from_ground}" />
 
   <!-- Wheel Mounting Positions -->
-  <xacro:property name="wheelbase" value="0.5120" /> <!-- TODO -->
-  <xacro:property name="track" value="0.5708" /> <!-- TODO -->
-  <xacro:property name="wheel_vertical_offset" value="0.03282" /> <!-- TODO -->
+  <xacro:property name="wheelbase" value="${base_x_size-2*wheel_radius+2*wheel_base_offset}" />
+  <xacro:property name="track" value="${base_y_size+wheel_length}" />
+  <xacro:property name="wheel_vertical_offset" value="${wheel_radius}" /> <!-- TODO -->
 
-  <!-- Wheel Properties -->
-  <xacro:property name="wheel_length" value="0.1143" /> <!-- TODO -->
-  <xacro:property name="wheel_radius" value="0.17775" /> <!-- TODO -->
+  <!-- Base link is the center of the robot's bottom plate -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0" />
+      <geometry>
+        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 0.8"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0" /> <!-- TODO -->
+      <geometry>
+        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/> <!-- TODO -->
+      </geometry>
+    </collision>
+  </link>
 
-  <xacro:macro name="jaguar_robot">
+  <!-- Base footprint is on the ground under the robot -->
+  <link name="base_footprint"/>
 
-    <!-- Base link is the center of the robot's bottom plate -->
-    <link name="base_link">
-      <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-      </visual>
-      <collision>
-        <origin xyz="0 0 ${base_z_size/4}" rpy="0 0 0" /> <!-- TODO -->
-        <geometry>
-          <box size="${base_x_size} ${base_y_size} ${base_z_size/2}"/> <!-- TODO -->
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0 ${base_z_size*3/4}" rpy="0 0 0" /> <!-- TODO -->
-        <geometry>
-          <box size="${base_x_size*4/5} ${base_y_size} ${base_z_size/2}"/> <!-- TODO -->
-        </geometry>
-      </collision>
-    </link>
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 ${wheel_vertical_offset - wheel_radius}" rpy="0 0 0" /> <!-- TODO -->
+    <parent link="base_link" />
+    <child link="base_footprint" />
+  </joint>
 
-    <!-- Base footprint is on the ground under the robot -->
-    <link name="base_footprint"/>
+  <!-- Interial link stores the robot's inertial information -->
+  <link name="inertial_link">
+    <inertial>
+      <mass value="33.455" /> <!-- TODO -->
+      <origin xyz="-0.08748 -0.00085 0.09947" /> <!-- TODO -->
+      <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" /> <!-- TODO -->
+    </inertial>
+  </link>
 
-    <joint name="base_footprint_joint" type="fixed">
-      <origin xyz="0 0 ${wheel_vertical_offset - wheel_radius}" rpy="0 0 0" /> <!-- TODO -->
-      <parent link="base_link" />
-      <child link="base_footprint" />
-    </joint>
+  <joint name="inertial_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="inertial_link" />
+  </joint>
 
-    <!-- Interial link stores the robot's inertial information -->
-    <link name="inertial_link">
-      <inertial>
-        <mass value="33.455" /> <!-- TODO -->
-        <origin xyz="-0.08748 -0.00085 0.09947" /> <!-- TODO -->
-        <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" /> <!-- TODO -->
-      </inertial>
-    </link>
+  <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
+  <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
+  <link name="imu_link"/>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="$(optenv HUSKY_IMU_XYZ 0 0 0.149)" rpy="$(optenv HUSKY_IMU_RPY 0 -1.5708 3.1416)" /> <!-- TODO -->
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
 
-    <joint name="inertial_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="base_link" />
-      <child link="inertial_link" />
-    </joint>
-
-    <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
-    <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
-    <link name="imu_link"/>
-    <joint name="imu_joint" type="fixed">
-      <origin xyz="$(optenv HUSKY_IMU_XYZ 0.19 0 0.149)" rpy="$(optenv HUSKY_IMU_RPY 0 -1.5708 3.1416)" /> <!-- TODO -->
-      <parent link="base_link" />
-      <child link="imu_link" />
-    </joint>
-
-    <!-- Jaguar wheel macros -->
-    <xacro:jaguar_wheel wheel_prefix="front_left">
-      <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-    </xacro:jaguar_wheel>
-    <xacro:jaguar_wheel wheel_prefix="front_right">
-      <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-    </xacro:jaguar_wheel>
-    <xacro:jaguar_wheel wheel_prefix="rear_left">
-      <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-    </xacro:jaguar_wheel>
-    <xacro:jaguar_wheel wheel_prefix="rear_right">
-      <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-    </xacro:jaguar_wheel>
-
-    <sick_lms1xx_mount prefix="base" topic="scan"/>
-
-    <joint name="laser_mount_joint" type="fixed">
-      <origin xyz="$(optenv HUSKY_LMS1XX_XYZ 0.2206 0.0 0.00635)" rpy="$(optenv HUSKY_LMS1XX_RPY 0.0 0.0 0.0)" />
-      <parent link="top_plate_link" />
-      <child link="base_laser_mount" />
-    </joint>
-
-  </xacro:macro>
-
+  <!-- Jaguar wheel macros -->
+  <xacro:jaguar_wheel wheel_prefix="front_left">
+    <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+  </xacro:jaguar_wheel>
+  <xacro:jaguar_wheel wheel_prefix="front_right">
+    <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+  </xacro:jaguar_wheel>
+  <xacro:jaguar_wheel wheel_prefix="rear_left">
+    <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+  </xacro:jaguar_wheel>
+  <xacro:jaguar_wheel wheel_prefix="rear_right">
+    <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+  </xacro:jaguar_wheel>
+  <!--
+  <sick_lms1xx_mount prefix="base" topic="scan"/>
+  <joint name="laser_mount_joint" type="fixed">
+    <origin xyz="$(optenv HUSKY_LMS1XX_XYZ 0.2206 0.0 0.00635)" rpy="$(optenv HUSKY_LMS1XX_RPY 0.0 0.0 0.0)" />
+    <parent link="top_plate_link" />
+    <child link="base_laser_mount" />
+  </joint>
+-->
 </robot>

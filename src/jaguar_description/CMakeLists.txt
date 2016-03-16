@@ -11,3 +11,7 @@ install(
 	DIRECTORY urdf
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+#add_executable(parser src/parser.cpp)
+
+#target_link_libraries(parser ${catkin_LIBRARIES})
