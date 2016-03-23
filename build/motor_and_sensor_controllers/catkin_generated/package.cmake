@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "jaguar4x4")
+set(jaguar4x4_MAINTAINER "drrobot <support@drrobot.com>")
+set(jaguar4x4_DEPRECATED "")
+set(jaguar4x4_VERSION "1.1.1")
+set(jaguar4x4_BUILD_DEPENDS "roscpp" "rospy" "std_msg" "message_generation")
+set(jaguar4x4_RUN_DEPENDS "roscpp" "rospy" "std_msg" "message_runtime")
+set(jaguar4x4_BUILDTOOL_DEPENDS "catkin")

@@ -17,19 +17,19 @@ using namespace std;
 using namespace DrRobot_MotionSensorDriver;
 
 double DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::resTable[25] = {114660,84510,62927,47077,35563,27119,20860,16204,12683,10000,7942,6327,5074,4103,3336,2724,2237,1846,1530,1275,1068,899.3,760.7,645.2,549.4};
-double DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::tempTable[25] = { -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100 };
+double DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::tempTable[25] = {-20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
 
 /*! this function is construct function for DrRobotMotionSensorDriver Class. It will initialize all the internal variables */
 DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::DrRobotMotionSensorDriver() {
   _robotConfig = new DrRobotMotionConfig();
   _robotConfig->commMethod = Network;
-  sprintf(_robotConfig->serialPortName, "ttyS0");
+  sprintf(_robotConfig->serialPortName, "/dev/ttyS0");
 
   _robotConfig->portNum = 10001;
   sprintf(_robotConfig->robotID, "DrRobot");
   sprintf(_robotConfig->robotIP, "192.168.0.60");
 
-  _robotConfig->robotType = Puma;
+  _robotConfig->robotType = Jaguar;
 
   _nMsgLen = 0;
 
@@ -64,7 +64,7 @@ DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::~DrRobotMotionSensorDrive
 }
 
 bool DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::portOpen() {
-  if ( (_eCommState == Connected) && (!_stopComm)) {
+  if ( (_eCommState == Connected) && (!_stopComm) ) {
     return true;
   }
   else {
@@ -349,7 +349,7 @@ void DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::processIMUMessage(ch
       _imuSensorData.comp_x = atoi(testMsg);
     }
     else if(msgPtr == 13) {
-      imuSensorData.comp_y = atof(testMsg);
+      _imuSensorData.comp_y = atof(testMsg);
     }
     else if(msgPtr == 14) {
       _imuSensorData.comp_z = atoi(testMsg);

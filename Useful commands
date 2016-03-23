@@ -1,0 +1,5 @@
+- Move from remote to local:
+rsync -avz -e 'ssh' drrobot@192.168.0.59:~/ROS/src/motor_and_sensor_controllers /home/iordanis/Roula/src
+
+-Move from local to remote:
+rsync -avz -e 'ssh' /home/iordanis/Roula/src/motor_and_sensor_controllers drrobot@192.168.0.59:~/ROS/src

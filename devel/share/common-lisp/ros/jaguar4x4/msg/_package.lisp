@@ -1,0 +1,17 @@
+(cl:defpackage jaguar4x4-msg
+  (:use )
+  (:export
+   "<MOTORDATAARRAY>"
+   "MOTORDATAARRAY"
+   "<MOTORBOARDINFOARRAY>"
+   "MOTORBOARDINFOARRAY"
+   "<GPSINFO>"
+   "GPSINFO"
+   "<MOTORBOARDINFO>"
+   "MOTORBOARDINFO"
+   "<MOTORDATA>"
+   "MOTORDATA"
+   "<IMUDATA>"
+   "IMUDATA"
+  ))
+

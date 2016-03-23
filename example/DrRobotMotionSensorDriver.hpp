@@ -2,29 +2,21 @@
  *  DrRobotMotionSensorDriver
  *  Copyright (C) 2013-2014  Dr Robot Inc
  *
- *  This library is software driver for motion/power control system
- *  on Jaguar/Puma outdoor robot from Dr Robot Inc.
- *  This library is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation; either
- *  version 2.1 of the License, or (at your option) any later version.
+ *  This library is software driver for motion/power control system on Jaguar/Puma outdoor robot from Dr Robot Inc.
+ *  This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
  *
- *  This library is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- *  Lesser General Public License for more details.
+ *  This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
  *
- *  You should have received a copy of the GNU Lesser General Public
- *  License along with this library; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *  You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * DrRobotMotionSensorDriver.hpp
+ *	DrRobotMotionSensorDriver.hpp
  *
  *  Created on: July, 2013
  *      Author: Dr Robot
  */
 
 #ifndef DRROBOTMOTIONSENSORDRIVER_H_
+
 #define DRROBOTMOTIONSENSORDRIVER_H_
 #include <stdexcept>
 #include <termios.h>
@@ -50,55 +42,42 @@
 #include <boost/shared_ptr.hpp>
 #include <poll.h>
 
-#define COMM_LOST_TH	200
-#define KNNOT2MS   	0.5144444
-#define FULLAD    	4095
+#define COMM_LOST_TH 200
+#define KNNOT2MS 0.5144444
+#define FULLAD 4095
 //! A namespace containing the DrRobot Motion/Sensor driver
 namespace DrRobot_MotionSensorDriver {
   typedef unsigned char BYTE;
-  /*! This definition limits the motor number
-  */
+  /*! This definition limits the motor number */
   const int MOTORSENSOR_NUM = 8;
 
-  /*! This definition limits the motor driver board number
-  */
+  /*! This definition limits the motor driver board number */
   const int MOTORBOARD_NUM = 4;
 
- /*! This definition limits all the string variables length < 255
-  * such as robotID, robotIP and serial port name
- */
+ /*! This definition limits all the string variables length < 255 such as robotID, robotIP and serial port name */
   const int CHAR_BUF_LEN  =  255;
 
-  /*! This definition limits the communication receiving buffer length
-   */
+  /*! This definition limits the communication receiving buffer length */
   const int MAXBUFLEN = 4096;
 
-  /*! This definition is no control command for motion control system.
-   *
-   */
-
   /*! \enum CommMethod
-   * Normally for standard robot, driver will use Network to communicate with robot
-   * If you use RS232 module connect robot with your PC, you need set as Serial
-   */
+   *  Normally for standard robot, driver will use Network to communicate with robot. If you use RS232 module connect robot with your PC, you need set as Serial */
   enum CommMethod {Network, Serial};
+
   /*! \enum CommState
-   *  Driver communication status
-   */
+   *  Driver communication status */
   enum CommState {Disconnected, Connected};
 
   /*! \enum robot type
-   *  specify the robot system on the robot
-   */
+   *  specify the robot system on the robot */
   enum RobotType {Jaguar,Puma};
+
   /*! \enum CtrlMethod
-   *  specify control method of the motor control command
-   */
+   *  specify control method of the motor control command */
   enum CtrlMethod {OpenLoop,Velocity,Position};
 
   /*! \struct  DrRobotMotionConfig
-   *  to configure the driver
-   */
+   *  to configure the driver */
   struct DrRobotMotionConfig {
     char robotID[CHAR_BUF_LEN];        //!< robotID, you could specify your own name for your robot
     char robotIP[CHAR_BUF_LEN];        //!< robot main WiFi module IP address, you could get it by manual
@@ -109,8 +88,7 @@ namespace DrRobot_MotionSensorDriver {
   };
 
   /*! \struct  MotorSensorData
-   *  for motor sensor data
-   */
+   *  for motor sensor data */
   struct MotorSensorData {
     int motorSensorEncoderPos[MOTORSENSOR_NUM];         //!< encoder count reading
     int motorSensorEncoderVel[MOTORSENSOR_NUM];         //!< encoder velocity reading
@@ -121,8 +99,7 @@ namespace DrRobot_MotionSensorDriver {
   };
 
   /*! \struct  MotorDriverBoardData
-   *  for motor driver board information
-   */
+   *  for motor driver board information */
   struct MotorBoardData {
     int status[MOTORBOARD_NUM];                         //!< motor board status, read back from query "FF"
     int temp1[MOTORBOARD_NUM];                           //!< motor board internal temperature 1
@@ -139,8 +116,7 @@ namespace DrRobot_MotionSensorDriver {
   };
 
   /*! \struct  GPSInfoData
-   *   this structure will decoded $GPRSMC message from GPS
-   */
+   *   this structure will decoded $GPRSMC message from GPS */
   struct GPSSensorData {
     long timeStamp;             //!< GPS Message time stamp, format: hhmmss
     long dateStamp;             //!< GPS date stamp, format:ddmmyy
@@ -152,8 +128,7 @@ namespace DrRobot_MotionSensorDriver {
   };
 
   /*! \struct  IMUSensorData
-   *   this structure will decoded IMU data
-   */
+   *   this structure will decoded IMU data */
   struct IMUSensorData {
     int seq;                    //!< IMU sensor package sequence number, 0~ 255
     double yaw;                 //!< yaw estimate from robot, unit:radian
@@ -174,40 +149,32 @@ namespace DrRobot_MotionSensorDriver {
   };
 
  /*! \class DrRobotMotionSensorDriver
- *      This is the main class declare
- *      When using this driver library, user need call construct function DrRobotMotionSensorDriver() first, it will initialize
- *      all the internal variables to default value, then call setDrRobotMotionDriverConfig() function to initialize all the
- *      setting, such as robot ID, IP address and port number.user could call openNetwork() or openSerial() function to start
- *      the driver. After that user could use reading functions to poll the sensor reading, please notice the sensor update rate
- *       is around 10Hz, it is determined by firmware on the robot, so faster than this rate is not necessary and should be avoid.
- *
- */
+ *      This is the main class declare.
+ *      When using this driver library, user need call construct function DrRobotMotionSensorDriver() first, it will initialize all the internal variables to default value, then call setDrRobotMotionDriverConfig() function to initialize all the setting, such as robot ID, IP address and port number.
+ *      User could call openNetwork() or openSerial() function to start the driver.
+ *      After that user could use reading functions to poll the sensor reading, please notice the sensor update rate is around 10Hz, it is determined by firmware on the robot, so faster than this rate is not necessary and should be avoid. */
   class DrRobotMotionSensorDriver {
     public:
       /*! @brief
-      * Constructor function
-      */
+      * Constructor function */
       DrRobotMotionSensorDriver();
 
       /*! @brief
-      *  Destructor function
-      */
+      *  Destructor function */
       ~DrRobotMotionSensorDriver();
 
       /*! @brief
       * This function is used for detecting the communication status,
       * @param[in]   none
       * @return false -- communication is lost
-      *         true  -- communication is OK
-      */
+      *         true  -- communication is OK */
       bool portOpen();
 
       /*! @brief
       *  This function is used for closing the communication
       * @param[in]   none
       * @return 0 -- communication is closed
-      *         others  -- something wrong there
-      */
+      *         others  -- something wrong there */
       void close();
 
       /*! @brief
@@ -215,8 +182,7 @@ namespace DrRobot_MotionSensorDriver {
       * @param[in]   serialPort serial port, on linux system, should as /dev/ttyS0
       * @param[in]   BAUD serial port baud rate, should be 115200 on standard robot
       * @return 0  port opened and starting communication
-      * others  something wrong there
-      */
+      * others  something wrong there */
       int openSerial(const char* serialPort, const long BAUD);
 
       /*! @brief
@@ -224,57 +190,49 @@ namespace DrRobot_MotionSensorDriver {
       * @param[in]   robotIP, should be as dot format, such as "192.168.0.201"
       * @param[in]   portNum, port number, 10001 or 10002
       * @return 0  port opened and starting communication
-      * others  something wrong there
-      */
+      * others  something wrong there */
       int openNetwork(const char*  robotIP, const int portNum );
 
       /*! @brief
       * This function will use struct DrRobotMotionConfig to configure the driver
       * @param[in]   driverConfig struct DrRobotMotionConfig
-      * @return null
-      */
+      * @return null */
       void setDrRobotMotionDriverConfig(DrRobotMotionConfig* driverConfig);
 
       /*! @brief
       *  This function will return the configuration of the driver
       * @param[in]   driverConfig struct DrRobotMotionConfig, will contain the driver configuration
-      * @return null
-      */
+      * @return null */
       void getDrRobotMotionDriverConfig(DrRobotMotionConfig* driverConfig);
 
       /*! @brief
       *  This function is used for reading motor sensor back from motion controller
       * @param[in]   motorSensorData this struct MotorSensorData will contain all the latest motor sensor data when return
-      * @return 0 means success, other fail
-      */
+      * @return 0 means success, other fail */
       int readMotorSensorData(MotorSensorData* motorSensorData );
 
       /*! @brief
       *  This function is used for reading IMU sensor back from robot
       * @param[in]   imuSensorData this struct IMUSensorData will contain all the latest IMU sensor data when returning
-      * @return 0 means success, other fail
-      */
+      * @return 0 means success, other fail */
       int readIMUSensorData(IMUSensorData* imuSensorData );
 
       /*! @brief
       *  This function is used for reading GPS sensor back from robot
       * @param[in]   gpsSensorData this struct GPSSensorData will contain all the latest GPS sensor data when returning
-      * @return 0 means success, other fail
-      */
+      * @return 0 means success, other fail */
       int readGPSSensorData(GPSSensorData* gpsSensorData);
 
       /*! @brief
       *  This function is used for reading all the motor board information back from robot
       * @param[in]   motorBoardData this struct MotorBoardData will contain all the latest motor board info data when returning
-      * @return 0 means success, other fail
-      */
+      * @return 0 means success, other fail */
       int readMotorBoardData(MotorBoardData* motorBoardData);
 
       /*! @brief
       *  This function is used for sending all the command to robot
       * @param[in]   command message and length of message, please not it must be ended with \r\n
-      * @return 0 means success, other fail
-      */
+      * @return 0 means success, other fail */
       int sendCommand(const char* msg, const int nLen);
     private:
       char _recBuf[MAXBUFLEN];
