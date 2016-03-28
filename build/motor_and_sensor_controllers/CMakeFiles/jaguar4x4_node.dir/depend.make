@@ -4,6 +4,10 @@
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
 
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/motorController.cpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
@@ -64,5 +68,6 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.c
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/ros/wall_timer.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/ros/wall_timer_options.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/rosconsole/macros_generated.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/std_msgs/Header.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o: /opt/ros/indigo/include/std_msgs/String.h
 

@@ -43,7 +43,7 @@ DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::DrRobotMotionSensorDriver
   // _sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 
   // TCP
-  if ((_sockfd = socket(PF_INET, SOCK_STREAM,IPPROTO_TCP)) < 0) {
+  if ((_sockfd = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
       printf("Failed to createsocket");
   }
   _serialfd = -1;

@@ -53,9 +53,11 @@
 #define COMM_LOST_TH	200
 #define KNNOT2MS   	0.5144444
 #define FULLAD    	4095
+ 
 //! A namespace containing the DrRobot Motion/Sensor driver
 namespace DrRobot_MotionSensorDriver {
   typedef unsigned char BYTE;
+
   /*! This definition limits the motor number
   */
   const int MOTORSENSOR_NUM = 8;
@@ -73,10 +75,6 @@ namespace DrRobot_MotionSensorDriver {
    */
   const int MAXBUFLEN = 4096;
 
-  /*! This definition is no control command for motion control system.
-   *
-   */
-
   /*! \enum CommMethod
    * Normally for standard robot, driver will use Network to communicate with robot
    * If you use RS232 module connect robot with your PC, you need set as Serial
@@ -91,6 +89,7 @@ namespace DrRobot_MotionSensorDriver {
    *  specify the robot system on the robot
    */
   enum RobotType {Jaguar,Puma};
+
   /*! \enum CtrlMethod
    *  specify control method of the motor control command
    */

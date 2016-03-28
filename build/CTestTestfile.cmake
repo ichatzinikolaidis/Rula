@@ -6,4 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 SUBDIRS(gtest)
 SUBDIRS(motor_and_sensor_controllers)
+SUBDIRS(teleop_twist_joy)
 SUBDIRS(jaguar_description)

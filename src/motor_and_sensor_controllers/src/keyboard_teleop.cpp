@@ -197,7 +197,7 @@ void KeyboardTeleopNode::keyboardLoop() {
 
             case KEYCODE_W_CAP:
                 if (!dirty) {
-                        ss << "MMW !M 400 -400";
+                        ss << "MMW !M 2000 -2000";
                         dirty = true;
                 }
                 break;

@@ -5,6 +5,10 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSens
  /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
  /home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o
+ /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
+ /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
+ /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
+ /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h
  /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
  /home/iordanis/Roula/src/motor_and_sensor_controllers/src/motorController.cpp
  /opt/ros/indigo/include/XmlRpcDecl.h
@@ -65,4 +69,5 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.c
  /opt/ros/indigo/include/ros/wall_timer.h
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
+ /opt/ros/indigo/include/std_msgs/Header.h
  /opt/ros/indigo/include/std_msgs/String.h

@@ -118,6 +118,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/iordanis/Roula/build/gtest/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/motor_and_sensor_controllers/cmake_install.cmake")
+  INCLUDE("/home/iordanis/Roula/build/teleop_twist_joy/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/jaguar_description/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
