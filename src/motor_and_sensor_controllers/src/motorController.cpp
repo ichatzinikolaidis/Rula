@@ -2,7 +2,6 @@
 
 // ROS messages
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/String.h>
 
 // Custom messages
 #include <jaguar4x4/MotorData.h>
@@ -30,7 +29,7 @@ public:
 	ros::NodeHandle node; // Initialize ROS node
 	ros::Publisher motorInfo_pub;
     ros::Publisher motorBoardInfo_pub;
-    ros::Subscriber cmd_vel; // Listen to topics regarding commanded velocity
+    ros::Subscriber cmd_vel_sub;
 
     Motor_Controller_Node() {
     	robotID = "Jaguar4x4"; // Name of robot
@@ -92,22 +91,57 @@ public:
         	ROS_INFO("Could not open network connection to [%s,%d]", robotConfig.robotIP, robotConfig.portNum);
         }
 
-        cmd_vel = node.subscribe<std_msgs::String>("cmd_vel", 1, boost::bind(&Motor_Controller_Node::cmdReceived, this, _1)); // Listen to commanded velocity topics
+        drrobotMotionDriver -> sendCommand("MMW !MG", 7);
+        ros::Duration(5).sleep();
+        ROS_INFO("E-brake released!");
+        cmd_vel_sub = node.subscribe("cmd_vel", 1, &Motor_Controller_Node::velReceived, this);
         return(0);
     }
 
     // Stop communication
     int stop() {
-    	drrobotMotionDriver->close();
+    	drrobotMotionDriver -> sendCommand("MMW !M 0 0", 10);
+    	ros::Duration(5).sleep();
+    	drrobotMotionDriver -> sendCommand("MMW !EX", 7);
+    	drrobotMotionDriver -> close();
     	usleep(1000000);
     	return(0);
     }
 
-    // Send command to robot
-    void cmdReceived(const std_msgs::String::ConstPtr& cmd_data) {
-    	ROS_INFO("Received motor command: [%s]", cmd_data->data.c_str());
-    	int nLen = strlen(cmd_data -> data.c_str());
-    	drrobotMotionDriver -> sendCommand(cmd_data -> data.c_str(), nLen); // Send command to robot
+    void velReceived(const geometry_msgs::Twist& msg) {
+    	int linear_vel = round(msg.linear.x * 1000);
+		int angular_vel = round(msg.angular.z * 1000);
+		string p = "MMW !M ";
+		if (angular_vel == 0) {
+			p += to_string(linear_vel) + " " + to_string(-linear_vel);
+		}
+		else {
+			if(linear_vel != 0) {
+				if (angular_vel > 0) { //turn left
+					if (linear_vel > 0) { //going forward
+						p += to_string(linear_vel) + " " + to_string(-linear_vel - angular_vel);
+					}
+					else { //going backwards
+						p += to_string(linear_vel) + " " + to_string(abs(linear_vel) + angular_vel);
+					}
+				}
+				else { //turn right
+					if (linear_vel > 0) { //going forward
+						p += to_string(linear_vel + abs(angular_vel)) + " " + to_string(-linear_vel);
+					}
+					else { //going backwards
+						p += to_string(-(abs(linear_vel) + abs(angular_vel))) + " " + to_string(-linear_vel);
+					}
+				}
+			}
+			else {
+				// z-turn
+				p = p + to_string(-angular_vel) + " " + to_string(-angular_vel);
+			}
+		}
+		ROS_INFO("Received motor command: [%s]", p.c_str());
+		int nLen = p.length();
+		drrobotMotionDriver -> sendCommand(p.c_str(), nLen); // Send command to robot
     }
 
     // Publish information about motor status

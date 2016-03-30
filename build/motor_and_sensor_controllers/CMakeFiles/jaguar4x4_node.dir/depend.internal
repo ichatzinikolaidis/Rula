@@ -70,4 +70,3 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.c
  /opt/ros/indigo/include/ros/wall_timer_options.h
  /opt/ros/indigo/include/rosconsole/macros_generated.h
  /opt/ros/indigo/include/std_msgs/Header.h
- /opt/ros/indigo/include/std_msgs/String.h

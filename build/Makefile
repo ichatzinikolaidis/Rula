@@ -592,17 +592,17 @@ _run_tests_teleop_twist_joy_roslaunch-check/fast:
 .PHONY : _run_tests_teleop_twist_joy_roslaunch-check/fast
 
 #=============================================================================
-# Target rules for targets named _run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
+# Target rules for targets named _run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
 
 # Build rule for target.
-_run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
-.PHONY : _run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
+_run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
+.PHONY : _run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
 
 # fast build rule for target.
-_run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch/fast:
-	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch.dir/build
-.PHONY : _run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch/fast
+_run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch/fast:
+	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch.dir/build
+.PHONY : _run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch/fast
 
 #=============================================================================
 # Target rules for targets named _run_tests_teleop_twist_joy_roslint
@@ -839,17 +839,17 @@ run_tests_teleop_twist_joy_roslaunch-check/fast:
 .PHONY : run_tests_teleop_twist_joy_roslaunch-check/fast
 
 #=============================================================================
-# Target rules for targets named run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
+# Target rules for targets named run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
 
 # Build rule for target.
-run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
-.PHONY : run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch
+run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
+.PHONY : run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch
 
 # fast build rule for target.
-run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch/fast:
-	$(MAKE) -f teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch.dir/build.make teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch.dir/build
-.PHONY : run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch/fast
+run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch/fast:
+	$(MAKE) -f teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch.dir/build.make teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch.dir/build
+.PHONY : run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch/fast
 
 #=============================================================================
 # Target rules for targets named run_tests_teleop_twist_joy_roslint
@@ -1106,7 +1106,7 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _run_tests_teleop_twist_joy"
 	@echo "... _run_tests_teleop_twist_joy_roslaunch-check"
-	@echo "... _run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch"
+	@echo "... _run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch"
 	@echo "... _run_tests_teleop_twist_joy_roslint"
 	@echo "... _run_tests_teleop_twist_joy_roslint_package"
 	@echo "... _run_tests_teleop_twist_joy_rostest"
@@ -1125,7 +1125,7 @@ help:
 	@echo "... roslint_teleop_twist_joy"
 	@echo "... run_tests_teleop_twist_joy"
 	@echo "... run_tests_teleop_twist_joy_roslaunch-check"
-	@echo "... run_tests_teleop_twist_joy_roslaunch-check_launch_teleop.launch"
+	@echo "... run_tests_teleop_twist_joy_roslaunch-check_launch_logitech_teleop.launch"
 	@echo "... run_tests_teleop_twist_joy_roslint"
 	@echo "... run_tests_teleop_twist_joy_roslint_package"
 	@echo "... run_tests_teleop_twist_joy_rostest"
