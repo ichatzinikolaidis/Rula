@@ -320,18 +320,17 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 # Directory level rules for directory motor_and_sensor_controllers
 
 # Convenience name for "all" pass in the directory.
+motor_and_sensor_controllers/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/all
 motor_and_sensor_controllers/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all
-motor_and_sensor_controllers/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/all
-motor_and_sensor_controllers/all: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/all
 .PHONY : motor_and_sensor_controllers/all
 
 # Convenience name for "clean" pass in the directory.
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/clean
-motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/clean
+motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/clean
@@ -339,8 +338,6 @@ motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jagu
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genlisp.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/clean
-motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean
-motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 motor_and_sensor_controllers/clean: motor_and_sensor_controllers/CMakeFiles/roscpp_generate_messages_py.dir/clean
@@ -385,37 +382,6 @@ motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_
 
 # clean rule for target.
 clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir
-
-# All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/depend
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles 
-	@echo "Built target _jaguar4x4_generate_messages_check_deps_IMUData"
-.PHONY : motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all
-
-# Build rule for subdir invocation for target.
-motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
-.PHONY : motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule
-
-# Convenience name for target.
-_jaguar4x4_generate_messages_check_deps_IMUData: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule
-.PHONY : _jaguar4x4_generate_messages_check_deps_IMUData
-
-# clean rule for target.
-motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/clean:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/clean
-.PHONY : motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/clean
-
-# clean rule for target.
-clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -543,6 +509,41 @@ clean: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_chec
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir
+
+# All Build rule for target.
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/all:
+	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/depend
+	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  3 4
+	@echo "Built target jaguar4x4_Controller"
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/all
+
+# Include target in all.
+all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule
+
+# Convenience name for target.
+jaguar4x4_Controller: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule
+.PHONY : jaguar4x4_Controller
+
+# clean rule for target.
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/clean:
+	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/clean
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/clean
+
+# clean rule for target.
+clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir
 
 # All Build rule for target.
@@ -555,7 +556,7 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/all: motor_and_sens
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/rule
@@ -577,9 +578,9 @@ clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/clean
 # Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir
 
 # All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/depend
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles 
@@ -592,7 +593,7 @@ all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/rule
@@ -614,22 +615,21 @@ clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages.dir/c
 # Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir
 
 # All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/all
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/depend
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  3 4 5 6 7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  5 6 7 8 9
 	@echo "Built target jaguar4x4_generate_messages_cpp"
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/rule
@@ -651,22 +651,21 @@ clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.d
 # Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir
 
 # All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/depend
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  9 10 11 12 13 14
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  10 11 12 13 14
 	@echo "Built target jaguar4x4_generate_messages_lisp"
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/rule
@@ -688,22 +687,21 @@ clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.
 # Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir
 
 # All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/all
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_GPSInfo.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/std_msgs_generate_messages_py.dir/all
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorData.dir/all
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/depend
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  15 16 17 18 19 20 21
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  15 16 17 18 19 20
 	@echo "Built target jaguar4x4_generate_messages_py"
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/rule
@@ -734,7 +732,7 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genlisp.dir/all: motor_and_sen
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genlisp.dir/rule
@@ -765,7 +763,7 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/all: motor_and_senso
 
 # Build rule for subdir invocation for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/rule
@@ -781,76 +779,6 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/clean:
 
 # clean rule for target.
 clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir
-
-# All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/all:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/depend
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  22 23
-	@echo "Built target jaguar4x4_node"
-.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/all
-
-# Include target in all.
-all: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
-.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule
-
-# Convenience name for target.
-jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule
-.PHONY : jaguar4x4_node
-
-# clean rule for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean
-.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean
-
-# clean rule for target.
-clean: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir
-
-# All Build rule for target.
-motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/all:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/depend
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  24
-	@echo "Built target keyboard_teleop"
-.PHONY : motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/all
-
-# Include target in all.
-all: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 1
-	$(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iordanis/Roula/build/CMakeFiles 0
-.PHONY : motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule
-
-# Convenience name for target.
-keyboard_teleop: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule
-.PHONY : keyboard_teleop
-
-# clean rule for target.
-motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/clean:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/clean
-.PHONY : motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/clean
-
-# clean rule for target.
-clean: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1189,8 +1117,8 @@ teleop_twist_joy/preinstall:
 # Target rules for target teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir
 
 # All Build rule for target.
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check.dir/all
 teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslint.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslaunch-check.dir/all
 teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/depend
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy.dir/build
@@ -1346,14 +1274,14 @@ clean: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_roslint_package.d
 # Target rules for target teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir
 
 # All Build rule for target.
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_six_dof_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_no_enable_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_differential_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_holonomic_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_no_enable_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_only_turbo_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_six_dof_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy_with_rosparam_map.test.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_only_turbo_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy.test.dir/all
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/depend
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/build.make teleop_twist_joy/CMakeFiles/_run_tests_teleop_twist_joy_rostest.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles 
@@ -1787,8 +1715,8 @@ clean: teleop_twist_joy/CMakeFiles/roslint_teleop_twist_joy.dir/clean
 # Target rules for target teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir
 
 # All Build rule for target.
-teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslint.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslaunch-check.dir/all
+teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslint.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/depend
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy.dir/build
@@ -1944,12 +1872,12 @@ clean: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_roslint_package.di
 # Target rules for target teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir
 
 # All Build rule for target.
-teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_holonomic_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_only_turbo_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_no_enable_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_differential_joy.test.dir/all
-teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_six_dof_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_only_turbo_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_holonomic_joy.test.dir/all
+teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_six_dof_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy.test.dir/all
 teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/all: teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy_with_rosparam_map.test.dir/all
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/build.make teleop_twist_joy/CMakeFiles/run_tests_teleop_twist_joy_rostest.dir/depend
@@ -2326,7 +2254,7 @@ clean: teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
 teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/all:
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/depend
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  25
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  21
 	@echo "Built target teleop_twist_joy"
 .PHONY : teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/all
 
@@ -2361,7 +2289,7 @@ clean: teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/clean
 teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/all: teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/all
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/build.make teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/depend
 	$(MAKE) -f teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/build.make teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  26
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles  22
 	@echo "Built target teleop_twist_joy_node"
 .PHONY : teleop_twist_joy/CMakeFiles/teleop_twist_joy_node.dir/all
 

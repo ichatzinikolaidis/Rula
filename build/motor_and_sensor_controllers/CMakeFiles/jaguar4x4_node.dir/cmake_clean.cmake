@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o"
   "CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o"
+  "CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o"
   "/home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node.pdb"
   "/home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node"
 )

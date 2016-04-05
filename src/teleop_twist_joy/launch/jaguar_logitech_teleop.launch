@@ -2,7 +2,7 @@
 	<include file="$(find teleop_twist_joy)/launch/logitech_teleop.launch"/>
 	<node
 		pkg="jaguar4x4"
-		type="jaguar4x4_node"
+		type="jaguar4x4_Controller"
 		name="jaguar_node"
 		required = "true"
 		output = "screen"

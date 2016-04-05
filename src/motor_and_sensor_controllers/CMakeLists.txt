@@ -4,7 +4,12 @@ set(CMAKE_CXX_FLAGS "-std=c++11 -O2")
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs message_generation)
+find_package(catkin REQUIRED COMPONENTS
+	roscpp
+	rospy
+	std_msgs
+	message_generation
+)
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS system)
@@ -20,13 +25,12 @@ find_package(Boost REQUIRED COMPONENTS system)
 
 ## Generate messages in the 'msg' folder
 add_message_files(
-   FILES
-   GPSInfo.msg
-   IMUData.msg
-   MotorBoardInfo.msg
-   MotorBoardInfoArray.msg
-   MotorData.msg
-   MotorDataArray.msg
+	FILES
+	GPSInfo.msg
+	MotorBoardInfo.msg
+	MotorBoardInfoArray.msg
+	MotorData.msg
+	MotorDataArray.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -37,10 +41,10 @@ add_message_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
- generate_messages(
-   DEPENDENCIES
-   std_msgs  # Or other packages containing msgs
- )
+generate_messages(
+	DEPENDENCIES
+	std_msgs  # Or other packages containing msgs
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -51,10 +55,8 @@ add_message_files(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-   INCLUDE_DIRS include
-#  LIBRARIES jaguar4x4_2014
-  CATKIN_DEPENDS roscpp rospy std_msg
-#  DEPENDS system_lib
+	INCLUDE_DIRS include
+	CATKIN_DEPENDS roscpp rospy std_msg message_runtime
 )
 
 ###########
@@ -73,19 +75,17 @@ include_directories(include
 # )
 
 ## Declare a cpp executable
-add_executable(jaguar4x4_node src/motorController.cpp src/DrRobotMotionSensorDriver.cpp)
-add_executable(keyboard_teleop src/keyboard_teleop.cpp)
+add_executable(jaguar4x4_Controller src/motor_and_sensors_controller.cpp src/DrRobotMotionSensorDriver.cpp)
+
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(jaguar4x4_2014_node jaguar4x4_2014_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(jaguar4x4_node
-   ${catkin_LIBRARIES}
- )
- target_link_libraries(keyboard_teleop
+target_link_libraries(jaguar4x4_Controller
   ${catkin_LIBRARIES}
- )
+)
+
 #############
 ## Install ##
 #############

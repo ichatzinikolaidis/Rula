@@ -1,0 +1,5 @@
+<launch>
+	<include file="$(find urdf_tutorial)/launch/display.launch">
+		<arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
+	</include>
+</launch>

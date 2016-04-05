@@ -5,6 +5,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp" "/home/iordanis/Roula/build/motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/src/imuController.cpp" "/home/iordanis/Roula/build/motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o"
   "/home/iordanis/Roula/src/motor_and_sensor_controllers/src/motorController.cpp" "/home/iordanis/Roula/build/motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg"
+messages_str = "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg"
 services_str = ""
 pkg_name = "jaguar4x4"
 dependencies_str = "std_msgs"

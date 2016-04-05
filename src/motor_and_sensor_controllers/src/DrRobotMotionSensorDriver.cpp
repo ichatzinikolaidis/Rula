@@ -1,13 +1,3 @@
-/*
-std::string str;
-std::vector<char> writable(str.size() + 1);
-std::copy(str.begin(), str.end(), writable.begin());
-
-string ( const char * s, size_t n );
-string ( const string& str, size_t pos, size_t n = npos );
-
-*/
-
 #include "DrRobotMotionSensorDriver.hpp"
 
 //#define DEBUG_ERROR           //set printf out error message
@@ -182,7 +172,7 @@ int DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::openNetwork(const cha
   _addr.sin_family = AF_INET;
   _addr.sin_port = htons(_robotConfig->portNum);
 
-  if ( inet_aton(_robotConfig->robotIP, &_addr.sin_addr) == 0) {
+  if (inet_aton(_robotConfig->robotIP, &_addr.sin_addr) == 0) {
     sprintf(temp, "DrRobot Motion/Sensor Driver Error Message: invalid IP address: %s\n", _robotConfig->robotIP);
     debug_ouput(temp);
     return -3;

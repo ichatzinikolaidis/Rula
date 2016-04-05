@@ -46,11 +46,10 @@ CMAKE_BINARY_DIR = /home/iordanis/Roula/build
 include motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/progress.make
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorDataArray.lisp
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/GPSInfo.lisp
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/IMUData.lisp
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp
 
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorDataArray.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorDataArray.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg
@@ -60,49 +59,41 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp: /home/
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorDataArray.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
 
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorData.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
-
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorBoardInfoArray.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
 
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorBoardInfo.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorData.msg"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
 
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/GPSInfo.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/GPSInfo.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg
 /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/GPSInfo.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/GPSInfo.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
 
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/IMUData.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/IMUData.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg
-/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/IMUData.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/IMUData.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
+/home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from jaguar4x4/MotorBoardInfo.msg"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg
 
 jaguar4x4_generate_messages_lisp: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp
 jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorDataArray.lisp
-jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp
 jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfoArray.lisp
-jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp
+jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorData.lisp
 jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/GPSInfo.lisp
-jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/IMUData.lisp
+jaguar4x4_generate_messages_lisp: /home/iordanis/Roula/devel/share/common-lisp/ros/jaguar4x4/msg/MotorBoardInfo.lisp
 jaguar4x4_generate_messages_lisp: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_lisp.dir/build.make
 .PHONY : jaguar4x4_generate_messages_lisp
 

@@ -95,16 +95,41 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSens
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o.provides.build: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o
 
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/flags.make
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/imuController.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o -c /home/iordanis/Roula/src/motor_and_sensor_controllers/src/imuController.cpp
+
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.i"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/iordanis/Roula/src/motor_and_sensor_controllers/src/imuController.cpp > CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.i
+
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.s"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/iordanis/Roula/src/motor_and_sensor_controllers/src/imuController.cpp -o CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.s
+
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.requires:
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.requires
+
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.provides: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.requires
+	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.provides.build
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.provides
+
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.provides.build: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o
+
 # Object files for target jaguar4x4_node
 jaguar4x4_node_OBJECTS = \
 "CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o" \
-"CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o"
+"CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o" \
+"CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o"
 
 # External object files for target jaguar4x4_node
 jaguar4x4_node_EXTERNAL_OBJECTS =
 
 /home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o
 /home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o
+/home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o
 /home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make
 /home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: /opt/ros/indigo/lib/libroscpp.so
 /home/iordanis/Roula/devel/lib/jaguar4x4/jaguar4x4_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
@@ -133,6 +158,7 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build: /home/iordanis
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/requires: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o.requires
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/requires: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o.requires
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/requires: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/imuController.cpp.o.requires
 .PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/requires
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/clean:

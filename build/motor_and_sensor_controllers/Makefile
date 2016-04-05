@@ -164,20 +164,6 @@ _jaguar4x4_generate_messages_check_deps_GPSInfo/fast:
 .PHONY : _jaguar4x4_generate_messages_check_deps_GPSInfo/fast
 
 # Convenience name for target.
-motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule
-.PHONY : motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule
-
-# Convenience name for target.
-_jaguar4x4_generate_messages_check_deps_IMUData: motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/rule
-.PHONY : _jaguar4x4_generate_messages_check_deps_IMUData
-
-# fast build rule for target.
-_jaguar4x4_generate_messages_check_deps_IMUData/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build
-.PHONY : _jaguar4x4_generate_messages_check_deps_IMUData/fast
-
-# Convenience name for target.
 motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/rule:
 	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/rule
 .PHONY : motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorBoardInfo.dir/rule
@@ -232,6 +218,20 @@ _jaguar4x4_generate_messages_check_deps_MotorDataArray: motor_and_sensor_control
 _jaguar4x4_generate_messages_check_deps_MotorDataArray/fast:
 	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/build
 .PHONY : _jaguar4x4_generate_messages_check_deps_MotorDataArray/fast
+
+# Convenience name for target.
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule:
+	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule
+.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule
+
+# Convenience name for target.
+jaguar4x4_Controller: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/rule
+.PHONY : jaguar4x4_Controller
+
+# fast build rule for target.
+jaguar4x4_Controller/fast:
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build
+.PHONY : jaguar4x4_Controller/fast
 
 # Convenience name for target.
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_gencpp.dir/rule:
@@ -330,34 +330,6 @@ jaguar4x4_genpy: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/rul
 jaguar4x4_genpy/fast:
 	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/build
 .PHONY : jaguar4x4_genpy/fast
-
-# Convenience name for target.
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule
-.PHONY : motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule
-
-# Convenience name for target.
-jaguar4x4_node: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/rule
-.PHONY : jaguar4x4_node
-
-# fast build rule for target.
-jaguar4x4_node/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build
-.PHONY : jaguar4x4_node/fast
-
-# Convenience name for target.
-motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule
-.PHONY : motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule
-
-# Convenience name for target.
-keyboard_teleop: motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/rule
-.PHONY : keyboard_teleop
-
-# fast build rule for target.
-keyboard_teleop/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build
-.PHONY : keyboard_teleop/fast
 
 # Convenience name for target.
 motor_and_sensor_controllers/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -490,7 +462,7 @@ src/DrRobotMotionSensorDriver.o: src/DrRobotMotionSensorDriver.cpp.o
 
 # target to build an object file
 src/DrRobotMotionSensorDriver.cpp.o:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.o
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.o
 .PHONY : src/DrRobotMotionSensorDriver.cpp.o
 
 src/DrRobotMotionSensorDriver.i: src/DrRobotMotionSensorDriver.cpp.i
@@ -498,7 +470,7 @@ src/DrRobotMotionSensorDriver.i: src/DrRobotMotionSensorDriver.cpp.i
 
 # target to preprocess a source file
 src/DrRobotMotionSensorDriver.cpp.i:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.i
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.i
 .PHONY : src/DrRobotMotionSensorDriver.cpp.i
 
 src/DrRobotMotionSensorDriver.s: src/DrRobotMotionSensorDriver.cpp.s
@@ -506,56 +478,32 @@ src/DrRobotMotionSensorDriver.s: src/DrRobotMotionSensorDriver.cpp.s
 
 # target to generate assembly for a file
 src/DrRobotMotionSensorDriver.cpp.s:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/DrRobotMotionSensorDriver.cpp.s
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.s
 .PHONY : src/DrRobotMotionSensorDriver.cpp.s
 
-src/keyboard_teleop.o: src/keyboard_teleop.cpp.o
-.PHONY : src/keyboard_teleop.o
+src/motor_and_sensors_controller.o: src/motor_and_sensors_controller.cpp.o
+.PHONY : src/motor_and_sensors_controller.o
 
 # target to build an object file
-src/keyboard_teleop.cpp.o:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/src/keyboard_teleop.cpp.o
-.PHONY : src/keyboard_teleop.cpp.o
+src/motor_and_sensors_controller.cpp.o:
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o
+.PHONY : src/motor_and_sensors_controller.cpp.o
 
-src/keyboard_teleop.i: src/keyboard_teleop.cpp.i
-.PHONY : src/keyboard_teleop.i
-
-# target to preprocess a source file
-src/keyboard_teleop.cpp.i:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/src/keyboard_teleop.cpp.i
-.PHONY : src/keyboard_teleop.cpp.i
-
-src/keyboard_teleop.s: src/keyboard_teleop.cpp.s
-.PHONY : src/keyboard_teleop.s
-
-# target to generate assembly for a file
-src/keyboard_teleop.cpp.s:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/src/keyboard_teleop.cpp.s
-.PHONY : src/keyboard_teleop.cpp.s
-
-src/motorController.o: src/motorController.cpp.o
-.PHONY : src/motorController.o
-
-# target to build an object file
-src/motorController.cpp.o:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.o
-.PHONY : src/motorController.cpp.o
-
-src/motorController.i: src/motorController.cpp.i
-.PHONY : src/motorController.i
+src/motor_and_sensors_controller.i: src/motor_and_sensors_controller.cpp.i
+.PHONY : src/motor_and_sensors_controller.i
 
 # target to preprocess a source file
-src/motorController.cpp.i:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.i
-.PHONY : src/motorController.cpp.i
+src/motor_and_sensors_controller.cpp.i:
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.i
+.PHONY : src/motor_and_sensors_controller.cpp.i
 
-src/motorController.s: src/motorController.cpp.s
-.PHONY : src/motorController.s
+src/motor_and_sensors_controller.s: src/motor_and_sensors_controller.cpp.s
+.PHONY : src/motor_and_sensors_controller.s
 
 # target to generate assembly for a file
-src/motorController.cpp.s:
-	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/src/motorController.cpp.s
-.PHONY : src/motorController.cpp.s
+src/motor_and_sensors_controller.cpp.s:
+	cd /home/iordanis/Roula/build && $(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.s
+.PHONY : src/motor_and_sensors_controller.cpp.s
 
 # Help Target
 help:
@@ -564,7 +512,6 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... _jaguar4x4_generate_messages_check_deps_GPSInfo"
-	@echo "... _jaguar4x4_generate_messages_check_deps_IMUData"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorBoardInfo"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorData"
@@ -573,6 +520,7 @@ help:
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... jaguar4x4_Controller"
 	@echo "... jaguar4x4_gencpp"
 	@echo "... jaguar4x4_generate_messages"
 	@echo "... jaguar4x4_generate_messages_cpp"
@@ -580,8 +528,6 @@ help:
 	@echo "... jaguar4x4_generate_messages_py"
 	@echo "... jaguar4x4_genlisp"
 	@echo "... jaguar4x4_genpy"
-	@echo "... jaguar4x4_node"
-	@echo "... keyboard_teleop"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
@@ -597,12 +543,9 @@ help:
 	@echo "... src/DrRobotMotionSensorDriver.o"
 	@echo "... src/DrRobotMotionSensorDriver.i"
 	@echo "... src/DrRobotMotionSensorDriver.s"
-	@echo "... src/keyboard_teleop.o"
-	@echo "... src/keyboard_teleop.i"
-	@echo "... src/keyboard_teleop.s"
-	@echo "... src/motorController.o"
-	@echo "... src/motorController.i"
-	@echo "... src/motorController.s"
+	@echo "... src/motor_and_sensors_controller.o"
+	@echo "... src/motor_and_sensors_controller.i"
+	@echo "... src/motor_and_sensors_controller.s"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "jaguar4x4: 6 messages, 0 services")
+message(STATUS "jaguar4x4: 5 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
@@ -20,6 +20,11 @@ add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg" "jaguar4x4/MotorData:std_msgs/Header"
 )
 
+get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
+add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" "std_msgs/Header"
+)
+
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg" NAME_WE)
 add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg" "std_msgs/Header"
@@ -30,19 +35,9 @@ add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg" "std_msgs/Header:jaguar4x4/MotorBoardInfo"
 )
 
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
-add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" "std_msgs/Header"
-)
-
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg" NAME_WE)
 add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg" "std_msgs/Header"
-)
-
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg" NAME_WE)
-add_custom_target(_jaguar4x4_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "jaguar4x4" "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg" "std_msgs/Header"
 )
 
 #
@@ -58,19 +53,13 @@ _generate_msg_cpp(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_cpp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
-)
-_generate_msg_cpp(jaguar4x4
   "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_cpp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
@@ -82,7 +71,7 @@ _generate_msg_cpp(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_cpp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/jaguar4x4
@@ -104,15 +93,13 @@ add_dependencies(jaguar4x4_generate_messages jaguar4x4_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
+add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_cpp _jaguar4x4_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -131,19 +118,13 @@ _generate_msg_lisp(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_lisp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
-)
-_generate_msg_lisp(jaguar4x4
   "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_lisp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
@@ -155,7 +136,7 @@ _generate_msg_lisp(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_lisp(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/jaguar4x4
@@ -177,15 +158,13 @@ add_dependencies(jaguar4x4_generate_messages jaguar4x4_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
+add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_lisp _jaguar4x4_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -204,19 +183,13 @@ _generate_msg_py(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_py(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
-  "${MSG_I_FLAGS}"
-  "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
-  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
-)
-_generate_msg_py(jaguar4x4
   "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg;/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_py(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
@@ -228,7 +201,7 @@ _generate_msg_py(jaguar4x4
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
 )
 _generate_msg_py(jaguar4x4
-  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg"
+  "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/jaguar4x4
@@ -250,15 +223,13 @@ add_dependencies(jaguar4x4_generate_messages jaguar4x4_generate_messages_py)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
+add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg" NAME_WE)
-add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg" NAME_WE)
 add_dependencies(jaguar4x4_generate_messages_py _jaguar4x4_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

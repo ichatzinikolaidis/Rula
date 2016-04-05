@@ -1,0 +1,2 @@
+rosrun xacro xacro.py -o model.urdf jaguar.urdf.xacro
+check_urdf model.urdf

@@ -267,19 +267,6 @@ _jaguar4x4_generate_messages_check_deps_GPSInfo/fast:
 .PHONY : _jaguar4x4_generate_messages_check_deps_GPSInfo/fast
 
 #=============================================================================
-# Target rules for targets named _jaguar4x4_generate_messages_check_deps_IMUData
-
-# Build rule for target.
-_jaguar4x4_generate_messages_check_deps_IMUData: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _jaguar4x4_generate_messages_check_deps_IMUData
-.PHONY : _jaguar4x4_generate_messages_check_deps_IMUData
-
-# fast build rule for target.
-_jaguar4x4_generate_messages_check_deps_IMUData/fast:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_IMUData.dir/build
-.PHONY : _jaguar4x4_generate_messages_check_deps_IMUData/fast
-
-#=============================================================================
 # Target rules for targets named _jaguar4x4_generate_messages_check_deps_MotorBoardInfo
 
 # Build rule for target.
@@ -330,6 +317,19 @@ _jaguar4x4_generate_messages_check_deps_MotorDataArray: cmake_check_build_system
 _jaguar4x4_generate_messages_check_deps_MotorDataArray/fast:
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/build.make motor_and_sensor_controllers/CMakeFiles/_jaguar4x4_generate_messages_check_deps_MotorDataArray.dir/build
 .PHONY : _jaguar4x4_generate_messages_check_deps_MotorDataArray/fast
+
+#=============================================================================
+# Target rules for targets named jaguar4x4_Controller
+
+# Build rule for target.
+jaguar4x4_Controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jaguar4x4_Controller
+.PHONY : jaguar4x4_Controller
+
+# fast build rule for target.
+jaguar4x4_Controller/fast:
+	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/build
+.PHONY : jaguar4x4_Controller/fast
 
 #=============================================================================
 # Target rules for targets named jaguar4x4_gencpp
@@ -421,32 +421,6 @@ jaguar4x4_genpy: cmake_check_build_system
 jaguar4x4_genpy/fast:
 	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_genpy.dir/build
 .PHONY : jaguar4x4_genpy/fast
-
-#=============================================================================
-# Target rules for targets named jaguar4x4_node
-
-# Build rule for target.
-jaguar4x4_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jaguar4x4_node
-.PHONY : jaguar4x4_node
-
-# fast build rule for target.
-jaguar4x4_node/fast:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build.make motor_and_sensor_controllers/CMakeFiles/jaguar4x4_node.dir/build
-.PHONY : jaguar4x4_node/fast
-
-#=============================================================================
-# Target rules for targets named keyboard_teleop
-
-# Build rule for target.
-keyboard_teleop: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 keyboard_teleop
-.PHONY : keyboard_teleop
-
-# fast build rule for target.
-keyboard_teleop/fast:
-	$(MAKE) -f motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build.make motor_and_sensor_controllers/CMakeFiles/keyboard_teleop.dir/build
-.PHONY : keyboard_teleop/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
@@ -1081,11 +1055,11 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... _jaguar4x4_generate_messages_check_deps_GPSInfo"
-	@echo "... _jaguar4x4_generate_messages_check_deps_IMUData"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorBoardInfo"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorBoardInfoArray"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorData"
 	@echo "... _jaguar4x4_generate_messages_check_deps_MotorDataArray"
+	@echo "... jaguar4x4_Controller"
 	@echo "... jaguar4x4_gencpp"
 	@echo "... jaguar4x4_generate_messages"
 	@echo "... jaguar4x4_generate_messages_cpp"
@@ -1093,8 +1067,6 @@ help:
 	@echo "... jaguar4x4_generate_messages_py"
 	@echo "... jaguar4x4_genlisp"
 	@echo "... jaguar4x4_genpy"
-	@echo "... jaguar4x4_node"
-	@echo "... keyboard_teleop"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"

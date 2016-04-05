@@ -46,11 +46,10 @@ CMAKE_BINARY_DIR = /home/iordanis/Roula/build
 include motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/progress.make
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
 
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg
@@ -61,54 +60,45 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp: /home/i
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorDataArray.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
 
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorData.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
-
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorBoardInfoArray.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
 
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorBoardInfo.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorData.msg"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
 
 /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg
 /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
 /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/GPSInfo.msg"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
 
-/home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
-/home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-/home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/IMUData.msg"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/IMUData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+/home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from jaguar4x4/MotorBoardInfo.msg"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/include/jaguar4x4 -e /opt/ros/indigo/share/gencpp/cmake/..
 
 jaguar4x4_generate_messages_cpp: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp
 jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h
-jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
 jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
-jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
+jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
 jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h
-jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/IMUData.h
+jaguar4x4_generate_messages_cpp: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
 jaguar4x4_generate_messages_cpp: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_cpp.dir/build.make
 .PHONY : jaguar4x4_generate_messages_cpp
 
