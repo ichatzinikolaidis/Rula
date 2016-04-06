@@ -351,7 +351,7 @@ void DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::processIMUMessage(ch
 
 void DrRobot_MotionSensorDriver::DrRobotMotionSensorDriver::processGPSMessage(char * pData, const int nLen) {
   char* testMsg;
-  int msgPtr= 0;
+  int msgPtr = 0;
   // sample messge will like this
   // $GPRMC,003625.2,V,4351.29884,N,07921.64936,W,,,220899,010.6,W*7F
   testMsg = strtok(pData,",");

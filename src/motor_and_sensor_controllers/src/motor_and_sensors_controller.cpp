@@ -153,9 +153,9 @@ class Jaguar_Controller_Node {
       //create publishers for sensor data information
       motorInfo_pub_ = node_.advertise<jaguar4x4::MotorDataArray>("drrobot_motor", 1);
       motorBoardInfo_pub_ = node_.advertise<jaguar4x4::MotorBoardInfoArray>("drrobot_motorboard", 1);
-      gps_pub_ = node_.advertise<sensor_msgs::NavSatFix>("drrobot_gps", 1);
-      imu_pub_ = node_.advertise<sensor_msgs::Imu>("drrobot_imu", 1);
-      compass_pub_ = node_.advertise<sensor_msgs::MagneticField>("drrobot_compass", 1);
+      gps_pub_ = node_.advertise<sensor_msgs::NavSatFix>("gps", 1);
+      imu_pub_ = node_.advertise<sensor_msgs::Imu>("imu", 1);
+      compass_pub_ = node_.advertise<sensor_msgs::MagneticField>("compass", 1);
 
       drrobotMotionDriver_ = new DrRobotMotionSensorDriver();
       if (  (robotType_ == "Jaguar") ) {
@@ -317,14 +317,11 @@ class Jaguar_Controller_Node {
         gpsInfo.header.stamp = ros::Time::now();
         gpsInfo.header.frame_id = string("gps_link");
 
-        gpsInfo.status = gpsSensorData_.gpsStatus;
-      gpsInfo.latitude = gpsSensorData_.latitude;
-      gpsInfo.longitude = gpsSensorData_.longitude;
-      gpsInfo.vog = gpsSensorData_.vog;
-      gpsInfo.cog = gpsSensorData_.cog;
-
-      // ROS_INFO("publish GPS Info");
-      gps_pub_.publish(gpsInfo);
+        gpsInfo.status.status = gpsSensorData_.gpsStatus;
+      	gpsInfo.latitude = gpsSensorData_.latitude;
+      	gpsInfo.longitude = gpsSensorData_.longitude;
+      	// ROS_INFO("publish GPS Info");
+      	gps_pub_.publish(gpsInfo);
 
       // send ping command here
       drrobotMotionDriver_->sendCommand("PING",4);

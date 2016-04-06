@@ -6,24 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-std_msgs/Header.h
--
-
 /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
 string
 -
@@ -144,6 +126,10 @@ boost/shared_ptr.hpp
 poll.h
 -
 
+/home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
+DrRobotMotionSensorDriver.hpp
+/home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.hpp
+
 /home/iordanis/Roula/src/motor_and_sensor_controllers/src/motor_and_sensors_controller.cpp
 assert.h
 -
@@ -167,6 +153,8 @@ sensor_msgs/Imu.h
 -
 sensor_msgs/MagneticField.h
 -
+sensor_msgs/NavSatFix.h
+-
 std_msgs/Float64.h
 -
 std_msgs/String.h
@@ -180,8 +168,6 @@ jaguar4x4/MotorDataArray.h
 jaguar4x4/MotorBoardInfoArray.h
 -
 jaguar4x4/MotorBoardInfo.h
--
-jaguar4x4/GPSInfo.h
 -
 DrRobotMotionSensorDriver.hpp
 -
@@ -1218,6 +1204,42 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 geometry_msgs/Vector3.h
+-
+
+/opt/ros/indigo/include/sensor_msgs/NavSatFix.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+sensor_msgs/NavSatStatus.h
+-
+
+/opt/ros/indigo/include/sensor_msgs/NavSatStatus.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
 -
 
 /opt/ros/indigo/include/sensor_msgs/PointCloud.h

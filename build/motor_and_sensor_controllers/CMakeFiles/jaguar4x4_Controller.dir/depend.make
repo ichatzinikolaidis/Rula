@@ -4,7 +4,6 @@
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
 
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/GPSInfo.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
@@ -88,6 +87,8 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_s
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/ChannelFloat32.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/Imu.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/MagneticField.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/NavSatFix.h
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/NavSatStatus.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/sensor_msgs/PointCloud.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/std_msgs/Empty.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/std_msgs/Float64.h
