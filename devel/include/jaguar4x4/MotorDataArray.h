@@ -137,9 +137,8 @@ struct Definition< ::jaguar4x4::MotorDataArray_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "#this message will be used for motor data infor\n\
+    return "#this message will be used for motor data information\n\
 MotorData[] motorData\n\
-\n\
 ================================================================================\n\
 MSG: jaguar4x4/MotorData\n\
 #motor sensor data message from Dr Robot \n\

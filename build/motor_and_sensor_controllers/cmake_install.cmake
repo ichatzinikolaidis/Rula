@@ -34,7 +34,6 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/jaguar4x4/msg" TYPE FILE FILES
-    "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg"
     "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg"
     "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg"
     "/home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg"

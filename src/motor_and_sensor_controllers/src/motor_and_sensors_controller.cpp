@@ -66,7 +66,7 @@ Publishes to (name / type):
 
 #include <DrRobotMotionSensorDriver.hpp>
 
-#define MOTOR_NUM           8       //max
+#define MOTOR_NUM           4       //max
 #define MOTOR_BOARD_NUM     4       //max
 using namespace std;
 using namespace DrRobot_MotionSensorDriver;

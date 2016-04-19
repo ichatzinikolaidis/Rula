@@ -346,48 +346,6 @@ _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast:
 .PHONY : _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast
 
 # Convenience name for target.
-teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make teleop_twist_joy/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 teleop_twist_joy/CMakeFiles/roslint.dir/rule:
 	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/roslint.dir/rule
 .PHONY : teleop_twist_joy/CMakeFiles/roslint.dir/rule
@@ -612,48 +570,6 @@ run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast:
 .PHONY : run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast
 
 # Convenience name for target.
-teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make teleop_twist_joy/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
 teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/rule:
 	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/rule
 .PHONY : teleop_twist_joy/CMakeFiles/teleop_twist_joy.dir/rule
@@ -750,9 +666,6 @@ help:
 	@echo "... _run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy_with_rosparam_map.test"
 	@echo "... _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test"
 	@echo "... edit_cache"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
@@ -774,9 +687,6 @@ help:
 	@echo "... run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy.test"
 	@echo "... run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy_with_rosparam_map.test"
 	@echo "... run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... teleop_twist_joy"
 	@echo "... teleop_twist_joy_node"
 	@echo "... test"

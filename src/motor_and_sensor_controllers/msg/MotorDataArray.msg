@@ -1,2 +1,2 @@
-#this message will be used for motor data infor
+#this message will be used for motor data information
 MotorData[] motorData

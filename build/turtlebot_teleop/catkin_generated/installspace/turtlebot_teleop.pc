@@ -1,0 +1,8 @@
+prefix=/home/iordanis/Roula/install
+
+Name: turtlebot_teleop
+Description: Description of turtlebot_teleop
+Version: 2.3.11
+Cflags: 
+Libs: -L/home/iordanis/Roula/install/lib 
+Requires: roscpp geometry_msgs joy

@@ -15,6 +15,4 @@
     (:file "_package_MotorBoardInfo" :depends-on ("_package"))
     (:file "MotorData" :depends-on ("_package_MotorData"))
     (:file "_package_MotorData" :depends-on ("_package"))
-    (:file "IMUData" :depends-on ("_package_IMUData"))
-    (:file "_package_IMUData" :depends-on ("_package"))
   ))

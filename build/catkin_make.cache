@@ -1,2 +1,2 @@
-jaguar_description:motor_and_sensor_controllers:teleop_twist_joy
+ip_camera_ROS_node:jaguar_description:joy:laser_proc:motor_and_sensor_controllers:odometry:teleop_twist_joy:turtlebot_teleop:urg_c:urg_node
 -DCATKIN_DEVEL_PREFIX=/home/iordanis/Roula/devel -DCMAKE_INSTALL_PREFIX=/home/iordanis/Roula/install -G Unix Makefiles

@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/get_multiecho.dir/current/samples/get_multiecho.c.o  -o /home/iordanis/Roula/devel/lib/urg_c/get_multiecho -rdynamic /home/iordanis/Roula/devel/lib/libliburg_c.so /home/iordanis/Roula/devel/lib/libopen_urg_sensor.so /home/iordanis/Roula/devel/lib/libliburg_c.so -lrt -lm -Wl,-rpath,/home/iordanis/Roula/devel/lib: 

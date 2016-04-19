@@ -1,0 +1,8 @@
+prefix=/home/iordanis/Roula/devel
+
+Name: joy
+Description: Description of joy
+Version: 1.9.7
+Cflags: 
+Libs: -L/home/iordanis/Roula/devel/lib 
+Requires: roscpp diagnostic_updater sensor_msgs

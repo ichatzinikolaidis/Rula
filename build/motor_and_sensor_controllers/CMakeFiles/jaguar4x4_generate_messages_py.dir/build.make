@@ -46,9 +46,8 @@ CMAKE_BINARY_DIR = /home/iordanis/Roula/build
 include motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/progress.make
 
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorDataArray.py
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py
+motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py
 
@@ -60,50 +59,41 @@ motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py: /home/io
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/MotorDataArray"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorDataArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
 
+/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
+/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/MotorData"
+	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
+
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/MotorBoardInfoArray"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfoArray.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
-
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/MotorData"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorData.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
-
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/GPSInfo"
-	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/GPSInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
 
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py: /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG jaguar4x4/MotorBoardInfo"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/iordanis/Roula/src/motor_and_sensor_controllers/msg/MotorBoardInfo.msg -Ijaguar4x4:/home/iordanis/Roula/src/motor_and_sensor_controllers/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p jaguar4x4 -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg
 
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorDataArray.py
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py
-/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py
+/home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for jaguar4x4"
 	cd /home/iordanis/Roula/build/motor_and_sensor_controllers && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg --initpy
 
 jaguar4x4_generate_messages_py: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py
 jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorDataArray.py
-jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorData.py
-jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_GPSInfo.py
+jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfoArray.py
 jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/_MotorBoardInfo.py
 jaguar4x4_generate_messages_py: /home/iordanis/Roula/devel/lib/python2.7/dist-packages/jaguar4x4/msg/__init__.py
 jaguar4x4_generate_messages_py: motor_and_sensor_controllers/CMakeFiles/jaguar4x4_generate_messages_py.dir/build.make

@@ -126,10 +126,6 @@ boost/shared_ptr.hpp
 poll.h
 -
 
-/home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
-DrRobotMotionSensorDriver.hpp
-/home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.hpp
-
 /home/iordanis/Roula/src/motor_and_sensor_controllers/src/motor_and_sensors_controller.cpp
 assert.h
 -

@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "ip_camera_node")
+set(ip_camera_node_MAINTAINER "George Stavrinos <gstavrinos@iit.demokritos.gr>")
+set(ip_camera_node_DEPRECATED "")
+set(ip_camera_node_VERSION "0.0.1")
+set(ip_camera_node_BUILD_DEPENDS "roscpp" "std_msgs" "boost" "roslib" "cv_bridge" "sensor_msgs" "image_transport")
+set(ip_camera_node_RUN_DEPENDS "message_runtime" "cv_bridge" "roscpp" "roslib" "boost" "std_msgs" "image_transport")
+set(ip_camera_node_BUILDTOOL_DEPENDS "catkin")

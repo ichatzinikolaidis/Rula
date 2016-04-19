@@ -11,7 +11,5 @@
    "MOTORBOARDINFO"
    "<MOTORDATA>"
    "MOTORDATA"
-   "<IMUDATA>"
-   "IMUDATA"
   ))
 

@@ -12,9 +12,8 @@ class MotorDataArray(genpy.Message):
   _md5sum = "ad620d64c056e380a64d71e49dea0fa7"
   _type = "jaguar4x4/MotorDataArray"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """#this message will be used for motor data infor
+  _full_text = """#this message will be used for motor data information
 MotorData[] motorData
-
 ================================================================================
 MSG: jaguar4x4/MotorData
 #motor sensor data message from Dr Robot 

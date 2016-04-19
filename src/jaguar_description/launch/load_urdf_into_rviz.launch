@@ -1,5 +1,13 @@
 <launch>
-	<include file="$(find urdf_tutorial)/launch/display.launch">
-		<arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
-	</include>
+	<arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
+  	<arg name="gui" default="true"/>
+  	<arg name="rvizconfig" default="$(find jaguar_description)/launch/urdf.rviz"/>
+
+  	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  	<param name="use_gui" value="$(arg gui)"/>
+
+  	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+	<include file="$(find urg_node)/launch/laser.launch"/>
 </launch>
