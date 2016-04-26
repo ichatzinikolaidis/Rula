@@ -49,8 +49,6 @@ Publishes to (name / type):
 #include <tf/transform_listener.h>
 #include <tf/transform_datatypes.h>
 
-#include <nav_msgs/Odometry.h>
-
 #include <geometry_msgs/Twist.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/MagneticField.h>
@@ -180,12 +178,36 @@ class Jaguar_Controller_Node {
         }
       }
 
-        ros::Duration(5).sleep();
-        drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
-        ROS_INFO("E-brake released!");
-        drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
-        motor_cmd_sub_ = node_.subscribe("cmd_vel", 1, &Jaguar_Controller_Node::cmdReceived, this);
-        return(0);
+      drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
+      average_angle_vel_x = 0.0;
+      average_angle_vel_y = 0.0;
+      average_angle_vel_z = 0.0;
+      average_acceler_x = 0.0;
+      average_acceler_y = 0.0;
+      average_acceler_z = 0.0;
+      drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
+      for (int i = 0; i < 1000; i++) {
+      	drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
+      	average_angle_vel_x += (float)imuSensorData.gyro_x;
+      	average_angle_vel_y += (float)imuSensorData.gyro_y;
+      	average_angle_vel_z += (float)imuSensorData.gyro_z;
+      	average_acceler_x += (float)imuSensorData.accel_x;
+      	average_acceler_y += (float)imuSensorData.accel_y;
+      	average_acceler_z += (float)imuSensorData.accel_z;
+      	ros::Duration(0.005).sleep();
+      }
+      average_angle_vel_x /= 1000.0;
+      average_angle_vel_y /= 1000.0;
+      average_angle_vel_z /= 1000.0;
+      average_acceler_x /= 1000.0;
+      average_acceler_y /= 1000.0;
+      average_acceler_z /= 1000.0;
+
+      ROS_INFO("E-brake released!");
+      drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
+      motor_cmd_sub_ = node_.subscribe("cmd_vel", 1, &Jaguar_Controller_Node::cmdReceived, this);
+
+      return(0);
     }
 
     int stop() {
@@ -283,24 +305,33 @@ class Jaguar_Controller_Node {
       //ROS_INFO("publish motor driver board info array");
       motorBoardInfo_pub_.publish(motorBoardInfoArray);
 
-        sensor_msgs::Imu imuData;
-        imuData.header.seq = imuSensorData.seq;
-        imuData.header.stamp = ros::Time::now();
-        imuData.header.frame_id = string("imu_link");
+      sensor_msgs::Imu imuData;
+      imuData.header.seq = imuSensorData.seq;
+      imuData.header.stamp = ros::Time::now();
+      imuData.header.frame_id = string("imu_link");
 
-        tf::Quaternion q = tf::createQuaternionFromRPY(imuSensorData.roll, imuSensorData.pitch, imuSensorData.yaw);
-        imuData.orientation.x = q.x();
-        imuData.orientation.y = q.y();
-        imuData.orientation.z = q.z();
-        imuData.orientation.w = q.w();
+      tf::Quaternion q = tf::createQuaternionFromRPY(imuSensorData.roll, imuSensorData.pitch, imuSensorData.yaw);
+      imuData.orientation.x = q.x();
+      imuData.orientation.y = q.y();
+      imuData.orientation.z = q.z();
+      imuData.orientation.w = q.w();
 
-        imuData.angular_velocity.x = imuSensorData.gyro_x;
-        imuData.angular_velocity.y = imuSensorData.gyro_y;
-        imuData.angular_velocity.z = imuSensorData.gyro_z;
+      imuData.linear_acceleration.x = (float(imuSensorData.accel_x) - average_acceler_x)/256*9.80665;
+      imuData.linear_acceleration.y = (float(imuSensorData.accel_y) - average_acceler_y)/256*9.80665;
+      imuData.linear_acceleration.z = (float(imuSensorData.accel_z) - average_acceler_z)/256*9.80665;
 
-        imuData.linear_acceleration.x = imuSensorData.accel_x;
-        imuData.linear_acceleration.y = imuSensorData.accel_y;
-        imuData.linear_acceleration.z = imuSensorData.accel_z;
+      imuData.angular_velocity.x = ((float)imuSensorData.gyro_x - average_angle_vel_x) / 14.375;
+      imuData.angular_velocity.y = ((float)imuSensorData.gyro_y - average_angle_vel_y) / 14.375;
+      imuData.angular_velocity.z = ((float)imuSensorData.gyro_z - average_angle_vel_z) / 14.375;
+      //if (abs(imuData.angular_velocity.x) <= 40.0) {
+      //	imuData.angular_velocity.x = 0.0;
+      //}
+      //if (abs(imuData.angular_velocity.y) <= 40.0) {
+      //	imuData.angular_velocity.y = 0.0;
+      //}
+      //if (abs(imuData.angular_velocity.z) <= 40.0) {
+      //	imuData.angular_velocity.z = 0.0;
+      //}
 
         sensor_msgs::MagneticField imuMagFieldData;
         imuMagFieldData.header.seq = imuSensorData.seq;
@@ -351,6 +382,9 @@ class Jaguar_Controller_Node {
     double maxSpeed_;
 
     int cntNum_;
+
+    float average_angle_vel_x, average_angle_vel_y, average_angle_vel_z;
+    float average_acceler_x, average_acceler_y, average_acceler_z;
 };
 
 int main(int argc, char** argv) {

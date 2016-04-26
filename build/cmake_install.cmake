@@ -117,14 +117,18 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/iordanis/Roula/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/iordanis/Roula/build/imu_tools/imu_tools/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/urg_c/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/motor_and_sensor_controllers/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/laser_proc/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/ip_camera_ROS_node/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/joy/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/teleop_twist_joy/cmake_install.cmake")
+  INCLUDE("/home/iordanis/Roula/build/imu_tools/imu_filter_madgwick/cmake_install.cmake")
+  INCLUDE("/home/iordanis/Roula/build/imu_tools/imu_complementary_filter/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/odometry/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/turtlebot_teleop/cmake_install.cmake")
+  INCLUDE("/home/iordanis/Roula/build/imu_tools/rviz_imu_plugin/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/urg_node/cmake_install.cmake")
   INCLUDE("/home/iordanis/Roula/build/jaguar_description/cmake_install.cmake")
 

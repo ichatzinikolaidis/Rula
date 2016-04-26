@@ -4,10 +4,6 @@
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/DrRobotMotionSensorDriver.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/DrRobotMotionSensorDriver.cpp
 
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfo.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorBoardInfoArray.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorData.h
-motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/devel/include/jaguar4x4/MotorDataArray.h
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/include/DrRobotMotionSensorDriver.hpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /home/iordanis/Roula/src/motor_and_sensor_controllers/src/motor_and_sensors_controller.cpp
 motor_and_sensor_controllers/CMakeFiles/jaguar4x4_Controller.dir/src/motor_and_sensors_controller.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h

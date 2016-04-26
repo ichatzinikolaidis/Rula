@@ -41,6 +41,7 @@ struct MotorData_
     , encoderDiff(0)
     , motorTemp(0.0)
     , motorCurrent(0.0)  {
+  (void)_alloc;
     }
 
 

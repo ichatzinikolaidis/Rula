@@ -47,7 +47,6 @@ time stamp
 # 0: no frame
 # 1: global frame
 string frame_id
-
 """
   __slots__ = ['motorBoardInfo']
   _slot_types = ['jaguar4x4/MotorBoardInfo[]']
@@ -105,8 +104,8 @@ string frame_id
           buff.write(struct.pack('<I%ss'%length, length, _x))
         _x = val1
         buff.write(_struct_I6f2Ii.pack(_x.status, _x.temp1, _x.temp2, _x.temp3, _x.volMain, _x.vol12V, _x.vol5V, _x.dinput, _x.doutput, _x.ack))
-    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
-    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
   def deserialize(self, str):
     """
@@ -177,8 +176,8 @@ string frame_id
           buff.write(struct.pack('<I%ss'%length, length, _x))
         _x = val1
         buff.write(_struct_I6f2Ii.pack(_x.status, _x.temp1, _x.temp2, _x.temp3, _x.volMain, _x.vol12V, _x.vol5V, _x.dinput, _x.doutput, _x.ack))
-    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
-    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
+    except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
+    except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
   def deserialize_numpy(self, str, numpy):
     """

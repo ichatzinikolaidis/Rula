@@ -346,6 +346,20 @@ _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast:
 .PHONY : _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test/fast
 
 # Convenience name for target.
+teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/rule:
+	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/rule
+.PHONY : teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/rule
+
+# Convenience name for target.
+clean_test_results_teleop_twist_joy: teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/rule
+.PHONY : clean_test_results_teleop_twist_joy
+
+# fast build rule for target.
+clean_test_results_teleop_twist_joy/fast:
+	cd /home/iordanis/Roula/build && $(MAKE) -f teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/build.make teleop_twist_joy/CMakeFiles/clean_test_results_teleop_twist_joy.dir/build
+.PHONY : clean_test_results_teleop_twist_joy/fast
+
+# Convenience name for target.
 teleop_twist_joy/CMakeFiles/roslint.dir/rule:
 	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 teleop_twist_joy/CMakeFiles/roslint.dir/rule
 .PHONY : teleop_twist_joy/CMakeFiles/roslint.dir/rule
@@ -665,6 +679,7 @@ help:
 	@echo "... _run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy.test"
 	@echo "... _run_tests_teleop_twist_joy_rostest_test_turbo_angular_enable_joy_with_rosparam_map.test"
 	@echo "... _run_tests_teleop_twist_joy_rostest_test_turbo_enable_joy.test"
+	@echo "... clean_test_results_teleop_twist_joy"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"

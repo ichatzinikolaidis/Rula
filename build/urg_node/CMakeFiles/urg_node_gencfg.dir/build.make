@@ -53,7 +53,7 @@ urg_node/CMakeFiles/urg_node_gencfg: /home/iordanis/Roula/devel/lib/python2.7/di
 /home/iordanis/Roula/devel/include/urg_node/URGConfig.h: /opt/ros/indigo/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/iordanis/Roula/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating dynamic reconfigure files from cfg/URG.cfg: /home/iordanis/Roula/devel/include/urg_node/URGConfig.h /home/iordanis/Roula/devel/lib/python2.7/dist-packages/urg_node/cfg/URGConfig.py"
-	cd /home/iordanis/Roula/build/urg_node && ../catkin_generated/env_cached.sh /home/iordanis/Roula/src/urg_node/cfg/URG.cfg /opt/ros/indigo/share/dynamic_reconfigure/cmake/.. /home/iordanis/Roula/devel/share/urg_node /home/iordanis/Roula/devel/include/urg_node /home/iordanis/Roula/devel/lib/python2.7/dist-packages/urg_node
+	cd /home/iordanis/Roula/build/urg_node && ../catkin_generated/env_cached.sh /home/iordanis/Roula/build/urg_node/setup_custom_pythonpath.sh /home/iordanis/Roula/src/urg_node/cfg/URG.cfg /opt/ros/indigo/share/dynamic_reconfigure/cmake/.. /home/iordanis/Roula/devel/share/urg_node /home/iordanis/Roula/devel/include/urg_node /home/iordanis/Roula/devel/lib/python2.7/dist-packages/urg_node
 
 /home/iordanis/Roula/devel/share/urg_node/docs/URGConfig.dox: /home/iordanis/Roula/devel/include/urg_node/URGConfig.h
 

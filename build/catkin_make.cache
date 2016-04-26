@@ -1,2 +1,2 @@
-ip_camera_ROS_node:jaguar_description:joy:laser_proc:motor_and_sensor_controllers:odometry:teleop_twist_joy:turtlebot_teleop:urg_c:urg_node
+imu_tools/imu_complementary_filter:imu_tools/imu_filter_madgwick:imu_tools/imu_tools:imu_tools/rviz_imu_plugin:ip_camera_ROS_node:jaguar_description:joy:laser_proc:motor_and_sensor_controllers:odometry:teleop_twist_joy:turtlebot_teleop:urg_c:urg_node
 -DCATKIN_DEVEL_PREFIX=/home/iordanis/Roula/devel -DCMAKE_INSTALL_PREFIX=/home/iordanis/Roula/install -G Unix Makefiles

@@ -29,6 +29,7 @@ struct MotorBoardInfoArray_
     }
   MotorBoardInfoArray_(const ContainerAllocator& _alloc)
     : motorBoardInfo(_alloc)  {
+  (void)_alloc;
     }
 
 

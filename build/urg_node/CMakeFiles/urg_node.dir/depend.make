@@ -66,6 +66,7 @@ urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/common.h
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/console.h
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/console_backend.h
+urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/cpp_common_decl.h
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/datatypes.h
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/duration.h
 urg_node/CMakeFiles/urg_node.dir/src/urg_node.cpp.o: /opt/ros/indigo/include/ros/exception.h

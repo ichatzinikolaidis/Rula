@@ -49,6 +49,7 @@ struct MotorBoardInfo_
     , dinput(0)
     , doutput(0)
     , ack(0)  {
+  (void)_alloc;
     }
 
 

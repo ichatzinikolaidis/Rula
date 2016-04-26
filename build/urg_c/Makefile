@@ -150,20 +150,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-urg_c/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 urg_c/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : urg_c/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: urg_c/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/iordanis/Roula/build && $(MAKE) -f urg_c/CMakeFiles/_catkin_empty_exported_target.dir/build.make urg_c/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-# Convenience name for target.
 urg_c/CMakeFiles/angle_convert_test.dir/rule:
 	cd /home/iordanis/Roula/build && $(MAKE) -f CMakeFiles/Makefile2 urg_c/CMakeFiles/angle_convert_test.dir/rule
 .PHONY : urg_c/CMakeFiles/angle_convert_test.dir/rule
@@ -855,7 +841,6 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... angle_convert_test"
 	@echo "... calculate_xy"
 	@echo "... edit_cache"

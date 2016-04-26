@@ -29,6 +29,7 @@ struct MotorDataArray_
     }
   MotorDataArray_(const ContainerAllocator& _alloc)
     : motorData(_alloc)  {
+  (void)_alloc;
     }
 
 

@@ -38,8 +38,10 @@ public:
         vx = deltaLF * distancePerCount; // (current_time_encoder - last_time_encoder).toSec();
         vy = deltaRF * distancePerCount; // (current_time_encoder - last_time_encoder).toSec();
 
-ROS_INFO("#####################%f#######################", vx);
-ROS_INFO("#####################%f#######################", vy);
+ROS_INFO("#####################%d#######################", deltaLF);
+ROS_INFO("#####################%d#######################", deltaRF);
+ROS_INFO("#####################%d#######################", deltaLR);
+ROS_INFO("#####################%d#######################", deltaRR);
 ROS_INFO("--------------------------------------------------");
 ROS_INFO("--------------------------------------------------");
     }
