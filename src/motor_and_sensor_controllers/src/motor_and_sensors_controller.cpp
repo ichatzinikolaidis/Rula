@@ -159,55 +159,53 @@ class Jaguar_Controller_Node {
       if (  (robotType_ == "Jaguar") ) {
         drrobotMotionDriver_->setDrRobotMotionDriverConfig(&robotConfig1_);
       }
-
-      cntNum_ = 0;
     }
 
     ~Jaguar_Controller_Node() {}
 
     int start() {
-      int res = -1;
-      if (  (robotType_ == "Jaguar")) {
-        res = drrobotMotionDriver_->openNetwork(robotConfig1_.robotIP,robotConfig1_.portNum);
-        if (res == 0) {
-          ROS_INFO("open port number at: [%d]", robotConfig1_.portNum);
-        }
-        else {
-          ROS_INFO("could not open network connection to [%s,%d]",  robotConfig1_.robotIP,robotConfig1_.portNum);
-          //ROS_INFO("error code [%d]",  res);
-        }
-      }
+    	int res = -1;
+    	if (  (robotType_ == "Jaguar")) {
+    		res = drrobotMotionDriver_->openNetwork(robotConfig1_.robotIP,robotConfig1_.portNum);
+    		if (res == 0) {
+    			ROS_INFO("open port number at: [%d]", robotConfig1_.portNum);
+    		}
+    		else {
+    			ROS_INFO("could not open network connection to [%s,%d]",  robotConfig1_.robotIP,robotConfig1_.portNum);
+    		}
+    	}
 
-      drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
-      average_angle_vel_x = 0.0;
-      average_angle_vel_y = 0.0;
-      average_angle_vel_z = 0.0;
-      average_acceler_x = 0.0;
-      average_acceler_y = 0.0;
-      average_acceler_z = 0.0;
-      drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
-      for (int i = 0; i < 1000; i++) {
-      	drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
-      	average_angle_vel_x += (float)imuSensorData.gyro_x;
-      	average_angle_vel_y += (float)imuSensorData.gyro_y;
-      	average_angle_vel_z += (float)imuSensorData.gyro_z;
-      	average_acceler_x += (float)imuSensorData.accel_x;
-      	average_acceler_y += (float)imuSensorData.accel_y;
-      	average_acceler_z += (float)imuSensorData.accel_z;
-      	ros::Duration(0.005).sleep();
-      }
-      average_angle_vel_x /= 1000.0;
-      average_angle_vel_y /= 1000.0;
-      average_angle_vel_z /= 1000.0;
-      average_acceler_x /= 1000.0;
-      average_acceler_y /= 1000.0;
-      average_acceler_z /= 1000.0;
+    	drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
 
-      ROS_INFO("E-brake released!");
-      drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
-      motor_cmd_sub_ = node_.subscribe("cmd_vel", 1, &Jaguar_Controller_Node::cmdReceived, this);
+    	average_angle_vel_x = 0.0;
+    	average_angle_vel_y = 0.0;
+    	average_angle_vel_z = 0.0;
+    	average_acceler_x = 0.0;
+    	average_acceler_y = 0.0;
+    	average_acceler_z = 0.0;
+    	drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
+    	for (int i = 0; i < 1000; i++) {
+    		drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
+    		average_angle_vel_x += (float)imuSensorData.gyro_x;
+    		average_angle_vel_y += (float)imuSensorData.gyro_y;
+    		average_angle_vel_z += (float)imuSensorData.gyro_z;
+    		average_acceler_x += (float)imuSensorData.accel_x;
+    		average_acceler_y += (float)imuSensorData.accel_y;
+    		average_acceler_z += (float)imuSensorData.accel_z;
+    		ros::Duration(0.005).sleep();
+    	}
+    	average_angle_vel_x /= 1000.0;
+    	average_angle_vel_y /= 1000.0;
+    	average_angle_vel_z /= 1000.0;
+    	average_acceler_x /= 1000.0;
+    	average_acceler_y /= 1000.0;
+    	average_acceler_z /= 1000.0;
 
-      return(0);
+    	ROS_INFO("E-brake released!");
+    	drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
+    	motor_cmd_sub_ = node_.subscribe("cmd_vel", 1, &Jaguar_Controller_Node::cmdReceived, this);
+
+    	return(0);
     }
 
     int stop() {
@@ -216,8 +214,8 @@ class Jaguar_Controller_Node {
         drrobotMotionDriver_ -> sendCommand("MMW !EX", 7);
         drrobotMotionDriver_ -> close();
 
-      usleep(1000000);
-      return(0);
+        usleep(1000000);
+        return(0);
     }
 
     void cmdReceived(const geometry_msgs::Twist& msg) {
@@ -261,10 +259,7 @@ class Jaguar_Controller_Node {
       drrobotMotionDriver_->readMotorBoardData(&motorBoardData_);
       drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
       drrobotMotionDriver_->readGPSSensorData(&gpsSensorData_);
-      //test = test - imuSensorData.seq;
-      //ROS_INFO("IMU Packet : [%d]",test);
-      // Translate from driver data to ROS data
-      cntNum_++;
+
       jaguar4x4::MotorDataArray motorDataArray;
       motorDataArray.motorData.resize(MOTOR_NUM);
       for (uint32_t i = 0 ; i < MOTOR_NUM; ++i) {
@@ -380,8 +375,6 @@ class Jaguar_Controller_Node {
     int motorDir_;
     double minSpeed_;
     double maxSpeed_;
-
-    int cntNum_;
 
     float average_angle_vel_x, average_angle_vel_y, average_angle_vel_z;
     float average_acceler_x, average_acceler_y, average_acceler_z;

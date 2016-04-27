@@ -1,8 +1,0 @@
-prefix=/home/iordanis/Roula/devel
-
-Name: jaguar4x4
-Description: Description of jaguar4x4
-Version: 1.1.1
-Cflags: -I/home/iordanis/Roula/devel/include -I/home/iordanis/Roula/src/motor_and_sensor_controllers/include
-Libs: -L/home/iordanis/Roula/devel/lib 
-Requires: roscpp rospy std_msg message_runtime

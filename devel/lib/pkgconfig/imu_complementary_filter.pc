@@ -1,8 +1,0 @@
-prefix=/home/iordanis/Roula/devel
-
-Name: imu_complementary_filter
-Description: Description of imu_complementary_filter
-Version: 1.0.10
-Cflags: -I/home/iordanis/Roula/src/imu_tools/imu_complementary_filter/include
-Libs: -L/home/iordanis/Roula/devel/lib -lcomplementary_filter
-Requires: message_filters roscpp sensor_msgs std_msgs tf
