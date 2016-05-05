@@ -7,10 +7,4 @@
 		required = "true"
 		output = "screen"
 	/>
-	<node
-		pkg="voltage_logging"
-		type="voltage_logger"
-		name="voltage_logger"
-		required = "false"
-	/>
 </launch>

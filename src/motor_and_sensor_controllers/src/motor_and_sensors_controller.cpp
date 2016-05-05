@@ -42,7 +42,8 @@ Publishes to (name / type):
 
 #include <assert.h>
 #include <boost/thread.hpp>
-#include <boost/lexical_cast.hpp>
+#include <boost/lexical_cast.hpp> 
+#include <cmath> 
 
 #include <ros/ros.h>
 #include "tf/transform_broadcaster.h"
@@ -65,7 +66,7 @@ Publishes to (name / type):
 #include <DrRobotMotionSensorDriver.hpp>
 
 #define MOTOR_NUM           4       //max
-#define MOTOR_BOARD_NUM     4       //max
+#define MOTOR_BOARD_NUM     3       //max
 using namespace std;
 using namespace DrRobot_MotionSensorDriver;
 
@@ -153,7 +154,7 @@ class Jaguar_Controller_Node {
       motorBoardInfo_pub_ = node_.advertise<jaguar4x4::MotorBoardInfoArray>("drrobot_motorboard", 1);
       gps_pub_ = node_.advertise<sensor_msgs::NavSatFix>("gps", 1);
       imu_pub_ = node_.advertise<sensor_msgs::Imu>("imu", 1);
-      compass_pub_ = node_.advertise<sensor_msgs::MagneticField>("compass", 1);
+      compass_pub_ = node_.advertise<geometry_msgs::Vector3Stamped>("compass", 1);
 
       drrobotMotionDriver_ = new DrRobotMotionSensorDriver();
       if (  (robotType_ == "Jaguar") ) {
@@ -180,26 +181,17 @@ class Jaguar_Controller_Node {
     	average_angle_vel_x = 0.0;
     	average_angle_vel_y = 0.0;
     	average_angle_vel_z = 0.0;
-    	average_acceler_x = 0.0;
-    	average_acceler_y = 0.0;
-    	average_acceler_z = 0.0;
     	drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
     	for (int i = 0; i < 1000; i++) {
     		drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
     		average_angle_vel_x += (float)imuSensorData.gyro_x;
     		average_angle_vel_y += (float)imuSensorData.gyro_y;
     		average_angle_vel_z += (float)imuSensorData.gyro_z;
-    		average_acceler_x += (float)imuSensorData.accel_x;
-    		average_acceler_y += (float)imuSensorData.accel_y;
-    		average_acceler_z += (float)imuSensorData.accel_z;
     		ros::Duration(0.005).sleep();
     	}
     	average_angle_vel_x /= 1000.0;
     	average_angle_vel_y /= 1000.0;
     	average_angle_vel_z /= 1000.0;
-    	average_acceler_x /= 1000.0;
-    	average_acceler_y /= 1000.0;
-    	average_acceler_z /= 1000.0;
 
     	ROS_INFO("E-brake released!");
     	drrobotMotionDriver_ -> sendCommand("MMW !MG", 7);
@@ -257,7 +249,6 @@ class Jaguar_Controller_Node {
       //int test = imuSensorData.seq;
       drrobotMotionDriver_->readMotorSensorData(&motorSensorData_);
       drrobotMotionDriver_->readMotorBoardData(&motorBoardData_);
-      drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
       drrobotMotionDriver_->readGPSSensorData(&gpsSensorData_);
 
       jaguar4x4::MotorDataArray motorDataArray;
@@ -301,40 +292,40 @@ class Jaguar_Controller_Node {
       motorBoardInfo_pub_.publish(motorBoardInfoArray);
 
       sensor_msgs::Imu imuData;
-      imuData.header.seq = imuSensorData.seq;
+      //imuData.header.seq = imuSensorData.seq;
       imuData.header.stamp = ros::Time::now();
       imuData.header.frame_id = string("imu_link");
+      imu_roll_velocity_accumulator = 0;
+      imu_pitch_velocity_accumulator = 0;
+      imu_yaw_velocity_accumulator = 0;
+      imu_x_acceleration_accumulator = 0;
+      imu_y_acceleration_accumulator = 0;
+      imu_z_acceleration_accumulator = 0;
+      for (int i = 0; i < 10; i++) {
+      	drrobotMotionDriver_->readIMUSensorData(&imuSensorData);
+      	imu_roll_velocity_accumulator += imuSensorData.gyro_x;
+      	imu_pitch_velocity_accumulator += imuSensorData.gyro_y;
+      	imu_yaw_velocity_accumulator += imuSensorData.gyro_z;
+      	imu_x_acceleration_accumulator += imuSensorData.accel_x;
+      	imu_y_acceleration_accumulator += imuSensorData.accel_y;
+      	imu_z_acceleration_accumulator += imuSensorData.accel_z;
+      }
 
-      tf::Quaternion q = tf::createQuaternionFromRPY(imuSensorData.roll, imuSensorData.pitch, imuSensorData.yaw);
-      imuData.orientation.x = q.x();
-      imuData.orientation.y = q.y();
-      imuData.orientation.z = q.z();
-      imuData.orientation.w = q.w();
+      imuData.linear_acceleration.x = (((float)imu_x_acceleration_accumulator)/10)/256*9.80665;
+      imuData.linear_acceleration.y = (((float)imu_y_acceleration_accumulator)/10)/256*9.80665;
+      imuData.linear_acceleration.z = (((float)imu_z_acceleration_accumulator)/10)/256*9.80665;
 
-      imuData.linear_acceleration.x = (float(imuSensorData.accel_x) - average_acceler_x)/256*9.80665;
-      imuData.linear_acceleration.y = (float(imuSensorData.accel_y) - average_acceler_y)/256*9.80665;
-      imuData.linear_acceleration.z = (float(imuSensorData.accel_z) - average_acceler_z)/256*9.80665;
+      imuData.angular_velocity.x = (((float)imu_roll_velocity_accumulator)/10 - average_angle_vel_x) / 14.375 * M_PI / 180;
+      imuData.angular_velocity.y = (((float)imu_pitch_velocity_accumulator)/10 - average_angle_vel_y) / 14.375 * M_PI / 180;
+      imuData.angular_velocity.z = (((float)imu_yaw_velocity_accumulator)/10 - average_angle_vel_z) / 14.375 * M_PI / 180;
 
-      imuData.angular_velocity.x = ((float)imuSensorData.gyro_x - average_angle_vel_x) / 14.375;
-      imuData.angular_velocity.y = ((float)imuSensorData.gyro_y - average_angle_vel_y) / 14.375;
-      imuData.angular_velocity.z = ((float)imuSensorData.gyro_z - average_angle_vel_z) / 14.375;
-      //if (abs(imuData.angular_velocity.x) <= 40.0) {
-      //	imuData.angular_velocity.x = 0.0;
-      //}
-      //if (abs(imuData.angular_velocity.y) <= 40.0) {
-      //	imuData.angular_velocity.y = 0.0;
-      //}
-      //if (abs(imuData.angular_velocity.z) <= 40.0) {
-      //	imuData.angular_velocity.z = 0.0;
-      //}
-
-        sensor_msgs::MagneticField imuMagFieldData;
-        imuMagFieldData.header.seq = imuSensorData.seq;
+        geometry_msgs::Vector3Stamped imuMagFieldData;
+        //imuMagFieldData.header.seq = imuSensorData.seq;
         imuMagFieldData.header.stamp = ros::Time::now();
-        imuData.header.frame_id = string("imu_link");
-        imuMagFieldData.magnetic_field.x = imuSensorData.comp_x;
-        imuMagFieldData.magnetic_field.y = imuSensorData.comp_y;
-        imuMagFieldData.magnetic_field.z = imuSensorData.comp_z;
+        imuMagFieldData.header.frame_id = string("imu_link");
+        imuMagFieldData.vector.x = (float)imuSensorData.comp_x;
+        imuMagFieldData.vector.y = (float)imuSensorData.comp_y;
+        imuMagFieldData.vector.z = (float)imuSensorData.comp_z;
         // ROS_INFO("publish IMU sensor data");
         imu_pub_.publish(imuData);
         compass_pub_.publish(imuMagFieldData);
@@ -377,7 +368,8 @@ class Jaguar_Controller_Node {
     double maxSpeed_;
 
     float average_angle_vel_x, average_angle_vel_y, average_angle_vel_z;
-    float average_acceler_x, average_acceler_y, average_acceler_z;
+    int imu_roll_velocity_accumulator, imu_pitch_velocity_accumulator, imu_yaw_velocity_accumulator;
+    int imu_x_acceleration_accumulator, imu_y_acceleration_accumulator, imu_z_acceleration_accumulator;
 };
 
 int main(int argc, char** argv) {

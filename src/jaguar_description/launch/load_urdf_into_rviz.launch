@@ -6,8 +6,26 @@
   	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
   	<param name="use_gui" value="$(arg gui)"/>
 
-  	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-  	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  	<node
+  		name="joint_state_publisher"
+  		pkg="joint_state_publisher"
+  		type="joint_state_publisher"
+  	/>
+  	<node
+  		name="robot_state_publisher"
+  		pkg="robot_state_publisher"
+  		type="state_publisher"
+  	/>
+  	<node
+  		name="rviz"
+  		pkg="rviz"
+  		type="rviz"
+  		args="-d $(arg rvizconfig)"
+  		required="true"
+  	/>
+  	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_node">
+    	<param name="use_mag" value="false"/>
+    	<param name="publish_tf" value="false"/>   
+	</node>
 	<include file="$(find urg_node)/launch/laser.launch"/>
 </launch>

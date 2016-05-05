@@ -147,7 +147,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <joint name="front_right_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="front_right_wheel_link"/>
-    <origin rpy="0 0 0" xyz="0.1775 -0.2865 0.13"/>
+    <origin rpy="0 0 3.14159" xyz="0.1775 -0.2865 0.13"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <transmission name="front_right_wheel_trans" type="SimpleTransmission">
@@ -221,7 +221,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
   <joint name="rear_right_wheel" type="continuous">
     <parent link="base_link"/>
     <child link="rear_right_wheel_link"/>
-    <origin rpy="0 0 0" xyz="-0.1775 -0.2865 0.13"/>
+    <origin rpy="0 0 3.14159" xyz="-0.1775 -0.2865 0.13"/>
     <axis rpy="0 0 0" xyz="0 1 0"/>
   </joint>
   <transmission name="rear_right_wheel_trans" type="SimpleTransmission">

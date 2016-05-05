@@ -114,7 +114,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(voltage_logger src/voltage_logging.cpp)
+add_executable(voltage_logger src/voltage_logger.cpp)
 target_link_libraries(voltage_logger ${catkin_LIBRARIES})
 add_dependencies(voltage_logger jaguar4x4)
 ## Declare a C++ library
