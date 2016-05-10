@@ -6,7 +6,7 @@ project(odometry_jaguar)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
-		#  move_base_msgs
+  jaguar4x4	#  move_base_msgs
   nav_msgs
   roscpp
   std_msgs
@@ -15,7 +15,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## System dependencies are found with CMake's conventions
 find_package(Boost REQUIRED COMPONENTS system)
-
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed

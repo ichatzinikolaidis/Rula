@@ -105,7 +105,7 @@ void Odometry_calc::init_variables() {
 
 	rate = 10;
 
-	ticks_meter = 300/(2*M_PI*0.135); // Wheel encoder ticks per meter.
+	ticks_meter = (2*M_PI*0.135)/300; // Wheel displacement per tick.
 
 	base_width = 0.52;
 
@@ -177,8 +177,8 @@ void Odometry_calc::update() {
 			d_right = 0;
 		}
 		else {
-			d_left = (left - enc_left) / ( ticks_meter);
-			d_right = (right - enc_right) / ( ticks_meter);
+			d_left = (left - enc_left) * ticks_meter;
+			d_right = (right - enc_right) * ticks_meter;
 		}
 
 		enc_left = left;
@@ -234,12 +234,25 @@ void Odometry_calc::update() {
 		odom.pose.pose.position.y = y_final;
 		odom.pose.pose.position.z = 0.0;
 		odom.pose.pose.orientation = odom_quat;
+		odom.pose.covariance[0] = 0.001;
+		odom.pose.covariance[7] = 0.001;
+		odom.pose.covariance[14] = 1000000.0;
+		odom.pose.covariance[21] = 1000000.0;
+		odom.pose.covariance[28] = 1000000.0;
+		odom.pose.covariance[35] = 1000.0;
 
 		//set the velocity
 		odom.child_frame_id = "base_link";
 		odom.twist.twist.linear.x = dx;
 		odom.twist.twist.linear.y = 0;
 		odom.twist.twist.angular.z = dr;
+		odom.twist.covariance[0] = 0.001;
+		odom.twist.covariance[7] = 0.001;
+		odom.twist.covariance[14] = 1000000.0;
+		odom.twist.covariance[21] = 1000000.0;
+		odom.twist.covariance[28] = 1000000.0;
+		odom.twist.covariance[35] = 1000.0;
+
 
 		//publish the message
 		odom_pub.publish(odom);

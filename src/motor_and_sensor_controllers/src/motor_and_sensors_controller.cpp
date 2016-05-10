@@ -314,10 +314,16 @@ class Jaguar_Controller_Node {
       imuData.linear_acceleration.x = (((float)imu_x_acceleration_accumulator)/10)/256*9.80665;
       imuData.linear_acceleration.y = (((float)imu_y_acceleration_accumulator)/10)/256*9.80665;
       imuData.linear_acceleration.z = (((float)imu_z_acceleration_accumulator)/10)/256*9.80665;
+      imuData.linear_acceleration_covariance[0] = -0.005112;
+      imuData.linear_acceleration_covariance[4] = 0.007291;
+      imuData.linear_acceleration_covariance[8] = 0.16114;
 
       imuData.angular_velocity.x = (((float)imu_roll_velocity_accumulator)/10 - average_angle_vel_x) / 14.375 * M_PI / 180;
       imuData.angular_velocity.y = (((float)imu_pitch_velocity_accumulator)/10 - average_angle_vel_y) / 14.375 * M_PI / 180;
       imuData.angular_velocity.z = (((float)imu_yaw_velocity_accumulator)/10 - average_angle_vel_z) / 14.375 * M_PI / 180;
+      imuData.angular_velocity_covariance[0] = 1/100000000;
+      imuData.angular_velocity_covariance[4] = 1/100000000;
+      imuData.angular_velocity_covariance[8] = 1/100000000;
 
         geometry_msgs::Vector3Stamped imuMagFieldData;
         //imuMagFieldData.header.seq = imuSensorData.seq;
