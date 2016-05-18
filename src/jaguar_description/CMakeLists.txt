@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(jaguar_description)
 
-find_package(catkin REQUIRED COMPONENTS roslaunch urdf xacro)
+find_package(catkin REQUIRED COMPONENTS roslaunch urdf xacro tf roscpp sensor_msgs)
 
 catkin_package(
-	CATKIN_DEPENDS urdf xacro
+	CATKIN_DEPENDS urdf xacro sensor_msgs
 )
 
 install(
@@ -12,6 +12,6 @@ install(
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-#add_executable(parser src/parser.cpp)
+add_executable(static_odom_frame src/static_odom_frame.cpp)
 
-#target_link_libraries(parser ${catkin_LIBRARIES})
+target_link_libraries(static_odom_frame ${catkin_LIBRARIES})

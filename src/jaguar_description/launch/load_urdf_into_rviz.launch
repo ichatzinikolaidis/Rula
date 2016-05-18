@@ -1,10 +1,9 @@
 <launch>
 	<arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
-  	<arg name="gui" default="true"/>
   	<arg name="rvizconfig" default="$(find jaguar_description)/launch/urdf.rviz"/>
 
   	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
-  	<param name="use_gui" value="$(arg gui)"/>
+  	<param name="use_gui" value="false"/>
 
   	<node
   		name="joint_state_publisher"
@@ -23,9 +22,12 @@
   		args="-d $(arg rvizconfig)"
   		required="true"
   	/>
-  	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_node">
-    	<param name="use_mag" value="false"/>
-    	<param name="publish_tf" value="false"/>   
-	</node>
-	<include file="$(find urg_node)/launch/laser.launch"/>
+	<!-- Laser node -->
+    <node pkg="urg_node" name="urg_node" type="urg_node">
+        <param name="frame_id" value="/laser_link"/>
+        <param name="ip_address" value="192.168.0.60"/>
+        <param name="ip_port" value="10002"/>
+        <param name="skip" value="5"/>
+        <param name="intensity" value="true" />
+    </node>
 </launch>
