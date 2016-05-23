@@ -6,8 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Grid1
-        - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 598
@@ -219,7 +217,7 @@ Visualization Manager:
       Length: 1
       Name: Odometry
       Position Tolerance: 0.1
-      Topic: /odom
+      Topic: /odometry/filtered
       Value: true
   Enabled: true
   Global Options:

@@ -190,12 +190,13 @@ void Odometry_calc::update() {
 	odom_trans.transform.rotation = odom_quat;
 
 	//send the transform
-	odom_broadcaster.sendTransform(odom_trans);
+	//odom_broadcaster.sendTransform(odom_trans);
 
 	//next, we'll publish the odometry message over ROS
 	nav_msgs::Odometry odom;
 	odom.header.stamp = now;
 	odom.header.frame_id = "odom";
+	odom.child_frame_id = "base_link";
 
 	//set the position
 	odom.pose.pose.position.x = x_final;
@@ -207,10 +208,9 @@ void Odometry_calc::update() {
 	odom.pose.covariance[14] = 1000000.0;
 	odom.pose.covariance[21] = 1000000.0;
 	odom.pose.covariance[28] = 1000000.0;
-	odom.pose.covariance[35] = 1000.0;
+	odom.pose.covariance[35] = 0.1;
 
 	//set the velocity
-	odom.child_frame_id = "base_link";
 	odom.twist.twist.linear.x = linear / elapsed;
 	odom.twist.twist.linear.y = 0;
 	odom.twist.twist.angular.z = angular / elapsed;

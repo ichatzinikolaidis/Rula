@@ -1,0 +1,7 @@
+<launch>
+	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_madgwick">
+    	<param name="use_mag" value="false"/>
+    	<param name="publish_tf" value="false"/>
+    	<param name="zeta" value="-1.0" />
+	</node>
+</launch>
