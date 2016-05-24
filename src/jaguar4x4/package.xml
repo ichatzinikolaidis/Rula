@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-    <name>voltage_logging</name>
+    <name>jaguar4x4</name>
     <version>0.0.1</version>
-    <description>A voltage logging package for Dr Robot's Jaguar 4x4</description>
+    <description>A motor and sensor controller package for Dr Robot's Jaguar 4x4</description>
 
     <!-- One maintainer tag required, multiple allowed, one person per tag -->
     <maintainer email="lohatzis@gmail.com">Iordanis Chatzinikolaidis</maintainer>
@@ -14,13 +14,17 @@
     <url type="website">https://github.com/ichatzinikolaidis/Roula.git</url>
 
     <!-- Author tags are optional, mutiple are allowed, one per tag -->
+    <!-- Authors do not have to be maintianers, but could be -->
+    <author email="support@drrobot.com">Dr Robot Inc.</author>
     <author email="lohatzis@gmail.com">Iordanis Chatzinikolaidis</author>
 
     <!-- The *_depend tags are used to specify dependencies -->
     <!-- Dependencies can be catkin packages or system dependencies -->
     <buildtool_depend>catkin</buildtool_depend>
     <build_depend>roscpp</build_depend>
+    <build_depend>std_msgs</build_depend>
     <build_depend>message_generation</build_depend>
     <run_depend>roscpp</run_depend>
+    <run_depend>std_msgs</run_depend>
     <run_depend>message_runtime</run_depend>
 </package>

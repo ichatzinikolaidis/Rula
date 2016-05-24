@@ -1,0 +1,17 @@
+<launch>
+    <arg name="joy_config" default="logitech" />
+    <arg name="joy_dev" default="/dev/input/js0" />
+
+    <node pkg="joy" type="joy_node" name="joy_node">
+        <param name="dev" value="$(arg joy_dev)" />
+        <param name="deadzone" value="0.01" />
+        <param name="autorepeat_rate" value="20" />
+    </node>
+
+    <node pkg="teleop_twist_joy" name="teleop_twist_joy" type="teleop_node">
+        <rosparam command="load" file="$(find teleop_twist_joy)/config/$(arg joy_config).config.yaml" />
+    </node>
+
+    <!-- Motor and sensor controller for Dr Robot's Jaguar 4x4-->
+    <node pkg="jaguar4x4" type="jaguar4x4_Controller" name="jaguar_node" required = "true" output = "screen" />
+</launch>

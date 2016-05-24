@@ -1,45 +1,33 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ip_camera_node)
 
-
-
-set(CMAKE_CXX_FLAGS "-std=c++11 -O2")
-
+## Find catkin macros and libraries
+## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz) is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  roslib
-  std_msgs
-  cv_bridge
-  image_transport
-  message_generation
+    roscpp
+    sensor_msgs
+    cv_bridge
+    image_transport
+    message_generation
 )
-
 find_package(OpenCV)
 
-generate_messages(
-	DEPENDENCIES
-  sensor_msgs
-	std_msgs
-)
+###################################
+## catkin specific configuration ##
+###################################
+## The catkin_package macro generates cmake config files for your package
+## Declare things to be passed to dependent projects
+catkin_package()
 
-find_package(Boost 1.40 COMPONENTS program_options REQUIRED)
+###########
+## Build ##
+###########
+## Specify additional locations of header files
+## Your package locations should be listed before other locations
+include_directories(${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS})
 
-catkin_package(
-	INCLUDE_DIRS
-   	LIBRARIES ${PROJECT_NAME}
-  	CATKIN_DEPENDS roscpp roslib std_msgs
-)
-
-include_directories(${catkin_INCLUDE_DIRS} ${BOOST_INCLUDE_DIR} ${Boost_INCLUDE_DIR} src)
-include_directories(${OpenCV_INCLUDE_DIRS})
-
-aux_source_directory(src SRC_LIST)
-
+## Declare a cpp executable
 add_executable(${PROJECT_NAME} src/ip_camera_node.cpp)
-target_link_libraries( ${PROJECT_NAME} ${Boost_LIBRARIES} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
-file(GLOB_RECURSE  LIB_CPP "./src/*.cpp")
-file(GLOB_RECURSE  LIB_C "./src/*.c")
-file(GLOB_RECURSE  LIB_HDRS "./src/*.h")
-
-#set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall" )
+## Specify libraries to link a library or executable target against
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})

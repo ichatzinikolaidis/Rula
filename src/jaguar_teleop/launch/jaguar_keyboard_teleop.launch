@@ -1,0 +1,12 @@
+<launch>
+	<param name="scale_linear" value="0.5" type="double"/>
+    <param name="scale_angular" value="1.5" type="double"/>
+
+	<!-- turtlebot_teleop_key already has its own built in velocity smoother -->
+	<node pkg="turtlebot_teleop" type="turtlebot_teleop_key" name="turtlebot_teleop_keyboard"  output="screen">
+		<remap from="turtlebot_teleop_keyboard/cmd_vel" to="cmd_vel"/>
+	</node>
+
+	<!-- Motor and sensor controller for Dr Robot's Jaguar 4x4-->
+	<node pkg="jaguar4x4" type="jaguar4x4_Controller" name="jaguar_node" required = "true"/>
+</launch>

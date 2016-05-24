@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-    <name>voltage_logging</name>
+    <name>jaguar_teleop</name>
     <version>0.0.1</version>
-    <description>A voltage logging package for Dr Robot's Jaguar 4x4</description>
+    <description>A keyboard and joypad support package for Dr Robot's Jaguar 4x4</description>
 
     <!-- One maintainer tag required, multiple allowed, one person per tag -->
     <maintainer email="lohatzis@gmail.com">Iordanis Chatzinikolaidis</maintainer>
@@ -20,7 +20,6 @@
     <!-- Dependencies can be catkin packages or system dependencies -->
     <buildtool_depend>catkin</buildtool_depend>
     <build_depend>roscpp</build_depend>
-    <build_depend>message_generation</build_depend>
+
     <run_depend>roscpp</run_depend>
-    <run_depend>message_runtime</run_depend>
 </package>
