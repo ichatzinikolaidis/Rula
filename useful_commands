@@ -2,7 +2,7 @@
 rsync -avz -e 'ssh' drrobot@192.168.0.59:~/ROS/src/motor_and_sensor_controllers /home/iordanis/Roula/src
 
 -Move from local to remote:
-rsync -avz -e 'ssh' /home/iordanis/Roula/src drrobot@192.168.0.59:~/ROS
+rsync -avz --delete -e 'ssh' /home/iordanis/Rula/src drrobot@192.168.0.59:~/ROS
 
 -Publish to /cmd_vel topic:
 rostopic pub -r 1 /cmd_vel geometry_msgs/Twist -- '[0.0, 0.0, 0.0]' '[0.0, 0.0, -0.01]'

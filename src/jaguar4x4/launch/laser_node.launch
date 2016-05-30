@@ -1,7 +1,4 @@
 <launch>
-	<!-- Motor and sensor controllers -->
-	<node pkg="jaguar4x4" type="jaguar4x4_Controller" name="motorSensorControl" />
-	
 	<!-- Laser node -->
     <node pkg="urg_node" name="urg_node" type="urg_node">
         <param name="frame_id" value="/laser_link"/>

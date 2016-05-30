@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+    <name>jaguar_gmapping</name>
+    <version>0.0.1</version>
+    <description>Wrapper for using gmapping with Jaguar 4x4</description>
+
+    <!-- One maintainer tag required, multiple allowed, one person per tag -->
+    <maintainer email="lohatzis@gmail.com">Chatzinikolaidis Iordanis</maintainer>
+
+    <!-- One license tag required, multiple allowed, one license per tag -->
+    <license>BSD</license>
+
+    <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+    <url type="website">https://github.com/ichatzinikolaidis/Roula.git</url>
+
+    <!-- Author tags are optional, mutiple are allowed, one per tag -->
+    <author email="lohatzis@gmail.com">Iordanis Chatzinikolaidis</author>
+
+    <!-- The *_depend tags are used to specify dependencies -->
+    <!-- Dependencies can be catkin packages or system dependencies -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>gmapping</build_depend>
+    <build_depend>roscpp</build_depend>
+    <run_depend>gmapping</run_depend>
+    <run_depend>roscpp</run_depend>
+</package>

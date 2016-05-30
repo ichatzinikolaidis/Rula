@@ -8,5 +8,5 @@
 	</node>
 
 	<!-- Motor and sensor controller for Dr Robot's Jaguar 4x4-->
-	<node pkg="jaguar4x4" type="jaguar4x4_Controller" name="jaguar_node" required = "true"/>
+	<node pkg="jaguar4x4" type="jaguar4x4_Controller" name="jaguar_node" required = "true" output = "screen"/>
 </launch>

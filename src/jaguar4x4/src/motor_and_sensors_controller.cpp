@@ -78,7 +78,7 @@ class Jaguar_Controller_Node {
     ros::Publisher motorBoardInfo_pub_;
     ros::Publisher gps_pub_;
     ros::Publisher imu_pub_;
-    ros::Publisher compass_pub_;
+    //ros::Publisher compass_pub_;
     ros::Subscriber motor_cmd_sub_;	
     std::string robot_prefix_;
     
@@ -154,7 +154,7 @@ class Jaguar_Controller_Node {
       motorBoardInfo_pub_ = node_.advertise<jaguar4x4::MotorBoardInfoArray>("drrobot_motorboard", 1);
       gps_pub_ = node_.advertise<sensor_msgs::NavSatFix>("gps", 1);
       imu_pub_ = node_.advertise<sensor_msgs::Imu>("imu", 1);
-      compass_pub_ = node_.advertise<geometry_msgs::Vector3Stamped>("compass", 1);
+      //compass_pub_ = node_.advertise<geometry_msgs::Vector3Stamped>("compass", 1);
 
       drrobotMotionDriver_ = new DrRobotMotionSensorDriver();
       if (  (robotType_ == "Jaguar") ) {
@@ -240,7 +240,7 @@ class Jaguar_Controller_Node {
                 p = p + to_string(-angular_vel) + " " + to_string(-angular_vel);
             }
         }
-        ROS_INFO("Received motor command: [%s]", p.c_str());
+        //ROS_INFO("Received motor command: [%s]", p.c_str());
         int nLen = p.length();
         drrobotMotionDriver_ -> sendCommand(p.c_str(), nLen); // Send command to robot
     }
@@ -324,17 +324,18 @@ class Jaguar_Controller_Node {
       imuData.angular_velocity_covariance[0] = 0.01;
       imuData.angular_velocity_covariance[4] = 0.01;
       imuData.angular_velocity_covariance[8] = 0.01;
-
-        geometry_msgs::Vector3Stamped imuMagFieldData;
-        //imuMagFieldData.header.seq = imuSensorData.seq;
-        imuMagFieldData.header.stamp = ros::Time::now();
-        imuMagFieldData.header.frame_id = string("imu_link");
-        imuMagFieldData.vector.x = (float)imuSensorData.comp_x;
-        imuMagFieldData.vector.y = (float)imuSensorData.comp_y;
-        imuMagFieldData.vector.z = (float)imuSensorData.comp_z;
-        // ROS_INFO("publish IMU sensor data");
+      // ROS_INFO("publish IMU sensor data");
         imu_pub_.publish(imuData);
-        compass_pub_.publish(imuMagFieldData);
+
+        //geometry_msgs::Vector3Stamped imuMagFieldData;
+        //imuMagFieldData.header.seq = imuSensorData.seq;
+        //imuMagFieldData.header.stamp = ros::Time::now();
+        //imuMagFieldData.header.frame_id = string("imu_link");
+        //imuMagFieldData.vector.x = (float)imuSensorData.comp_x;
+        //imuMagFieldData.vector.y = (float)imuSensorData.comp_y;
+        //imuMagFieldData.vector.z = (float)imuSensorData.comp_z;
+        // ROS_INFO("publish compass sensor data");
+        //compass_pub_.publish(imuMagFieldData);
 
         sensor_msgs::NavSatFix gpsInfo;
         gpsInfo.header.stamp = ros::Time::now();
@@ -343,6 +344,7 @@ class Jaguar_Controller_Node {
         gpsInfo.status.status = gpsSensorData_.gpsStatus;
       	gpsInfo.latitude = gpsSensorData_.latitude;
       	gpsInfo.longitude = gpsSensorData_.longitude;
+        gpsInfo.position_covariance_type = 0;
       	// ROS_INFO("publish GPS Info");
       	gps_pub_.publish(gpsInfo);
 

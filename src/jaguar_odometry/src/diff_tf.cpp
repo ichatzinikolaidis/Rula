@@ -203,12 +203,12 @@ void Odometry_calc::update() {
 	odom.pose.pose.position.y = y_final;
 	odom.pose.pose.position.z = 0.0;
 	odom.pose.pose.orientation = odom_quat;
-	odom.pose.covariance[0] = 0.001;
-	odom.pose.covariance[7] = 0.001;
+	odom.pose.covariance[0] = 0.01;
+	odom.pose.covariance[7] = 0.01;
 	odom.pose.covariance[14] = 1000000.0;
 	odom.pose.covariance[21] = 1000000.0;
 	odom.pose.covariance[28] = 1000000.0;
-	odom.pose.covariance[35] = 0.1;
+	odom.pose.covariance[35] = 0.01;
 
 	//set the velocity
 	odom.twist.twist.linear.x = linear / elapsed;

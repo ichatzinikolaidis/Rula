@@ -1,6 +1,9 @@
 <launch>
-	<arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
-  	<arg name="rvizconfig" default="$(find jaguar_description)/launch/urdf_local.rviz"/>
+	<!-- Launch EKF based odometry -->
+    <include file="$(find jaguar_odometry)/launch/ekf_wheel_IMU_localization.launch"/>
+    <!-- Launch robot's model in rviz -->
+    <arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
+  	<arg name="rvizconfig" default="$(find jaguar_gmapping)/launch/rviz_gmapping_jaguar_config.rviz"/>
 
   	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
   	<param name="use_gui" value="false"/>
@@ -22,4 +25,6 @@
   		args="-d $(arg rvizconfig)"
   		required="true"
   	/>
+    <!-- Start map creation -->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping"/>
 </launch>
