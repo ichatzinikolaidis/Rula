@@ -3,7 +3,7 @@
     <include file="$(find jaguar_odometry)/launch/ekf_wheel_IMU_localization.launch"/>
     <!-- Launch robot's model in rviz -->
     <arg name="model" default="$(find jaguar_description)/urdf/model.urdf"/>
-  	<arg name="rvizconfig" default="$(find jaguar_gmapping)/launch/rviz_gmapping_jaguar_config.rviz"/>
+  	<arg name="rvizconfig" default="$(find jaguar_navigation)/launch/rviz_gmapping_jaguar_config.rviz"/>
 
   	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
   	<param name="use_gui" value="false"/>
