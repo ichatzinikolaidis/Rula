@@ -291,6 +291,11 @@ class Jaguar_Controller_Node {
       //ROS_INFO("publish motor driver board info array");
       motorBoardInfo_pub_.publish(motorBoardInfoArray);
 
+      // Warn about battery status
+      if ((motorBoardData_.volMain[0]<20)||(motorBoardData_.volMain[0]<20)||(motorBoardData_.volMain[0]<20)) {
+        ROS_ERROR("Voltage is low. Please recharge batteries as soon as possible.");
+      }
+
       sensor_msgs::Imu imuData;
       //imuData.header.seq = imuSensorData.seq;
       imuData.header.stamp = ros::Time::now();
@@ -327,6 +332,7 @@ class Jaguar_Controller_Node {
       // ROS_INFO("publish IMU sensor data");
         imu_pub_.publish(imuData);
 
+        ROS_INFO("compass x: %d, compass y: %d, compass z: %d", imuSensorData.comp_x, imuSensorData.comp_y, imuSensorData.comp_z);
         //geometry_msgs::Vector3Stamped imuMagFieldData;
         //imuMagFieldData.header.seq = imuSensorData.seq;
         //imuMagFieldData.header.stamp = ros::Time::now();

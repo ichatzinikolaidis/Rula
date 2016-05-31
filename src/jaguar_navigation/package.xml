@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-    <name>jaguar_gmapping</name>
+    <name>jaguar_navigation</name>
     <version>0.0.1</version>
-    <description>Wrapper for using gmapping with Jaguar 4x4</description>
+    <description>Navigation setup for Dr Robot's Jaguar 4x4</description>
 
     <!-- One maintainer tag required, multiple allowed, one person per tag -->
     <maintainer email="lohatzis@gmail.com">Chatzinikolaidis Iordanis</maintainer>

@@ -6,8 +6,8 @@
 	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_madgwick">
     	<param name="use_mag" value="false"/>
     	<param name="publish_tf" value="false"/>
-    	<param name="zeta" value="-1.5" />
-    	<param name="gain" value="0.5" />
+    	<param name="zeta" value="0.0" />
+    	<param name="gain" value="0.2" />
 		<remap from="/imu/data_raw" to="/imu"/>
 	</node>
 </launch>
