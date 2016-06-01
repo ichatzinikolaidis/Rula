@@ -8,7 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
     sensor_msgs
     cv_bridge
 )
-find_package(OpenCV REQUIRED)
+find_package(OpenCV 3.1.0 REQUIRED)
 
 ###################################
 ## catkin specific configuration ##
