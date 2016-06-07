@@ -1,0 +1,18 @@
+local_costmap:
+    # Indicates the frame for the costmap to operate in.
+    global_frame: /odom
+    # Indicates the transformation frame of the robot’s base_link.
+    robot_base_frame: base_link
+    # The frequency (in Hz) for map update.
+    update_frequency: 2.0
+    # The frequency (in Hz) for publication of the display data.
+    publish_frequency: 10.0
+    # Indicates whether the system uses or not a static map.
+    static_map: false
+    # Use a rolling window map.
+    rolling_window: true
+    # Width and height of the map, in meters.
+    width: 3.0
+    height: 3.0
+    # Resolution of the map in meters per cell.
+    resolution: 0.025

@@ -37,7 +37,7 @@ if (CATKIN_ENABLE_TESTING)
   roslint_add_test()
 
   find_package(roslaunch REQUIRED)
-  roslaunch_add_file_check(launch/logitech_teleop.launch)
+  roslaunch_add_file_check(launch/teleop.launch)
 
   find_package(rostest REQUIRED)
   include_directories(include ${catkin_INCLUDE_DIRS})
