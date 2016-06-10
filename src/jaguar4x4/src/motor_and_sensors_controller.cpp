@@ -43,6 +43,7 @@ Publishes to (name / type):
 #include <assert.h>
 #include <boost/thread.hpp>
 #include <boost/lexical_cast.hpp> 
+#include <boost/algorithm/clamp.hpp>
 #include <cmath> 
 
 #include <ros/ros.h>
@@ -214,33 +215,7 @@ class Jaguar_Controller_Node {
         int linear_vel = round(msg.linear.x * 1000);
         int angular_vel = round(msg.angular.z * 1000);
         string p = "MMW !M ";
-        if (angular_vel == 0) {
-            p += to_string(linear_vel) + " " + to_string(-linear_vel);
-        }
-        else {
-            if(linear_vel != 0) {
-                if (angular_vel > 0) { //turn left
-                    if (linear_vel > 0) { //going forward
-                        p += to_string(linear_vel) + " " + to_string(-linear_vel - angular_vel);
-                    }
-                    else { //going backwards
-                        p += to_string(linear_vel) + " " + to_string(abs(linear_vel) + angular_vel);
-                    }
-                }
-                else { //turn right
-                    if (linear_vel > 0) { //going forward
-                        p += to_string(linear_vel + abs(angular_vel)) + " " + to_string(-linear_vel);
-                    }
-                    else { //going backwards
-                        p += to_string(-(abs(linear_vel) + abs(angular_vel))) + " " + to_string(-linear_vel);
-                    }
-                }
-            }
-            else { // z-turn
-                p = p + to_string(-angular_vel) + " " + to_string(-angular_vel);
-            }
-        }
-        //ROS_INFO("Received motor command: [%s]", p.c_str());
+        p += to_string(boost::algorithm::clamp(linear_vel - angular_vel, -1000, 1000)) + " " + to_string(boost::algorithm::clamp(-linear_vel - angular_vel, -1000, 1000));
         int nLen = p.length();
         drrobotMotionDriver_ -> sendCommand(p.c_str(), nLen); // Send command to robot
     }
@@ -292,8 +267,8 @@ class Jaguar_Controller_Node {
       motorBoardInfo_pub_.publish(motorBoardInfoArray);
 
       // Warn about battery status
-      if ((motorBoardData_.volMain[0]<20)||(motorBoardData_.volMain[0]<20)||(motorBoardData_.volMain[0]<20)) {
-        ROS_ERROR("Voltage is low. Please recharge batteries as soon as possible.");
+      if ((motorBoardData_.volMain[0]<20.0)&&(motorBoardData_.volMain[1]<20.0)&&(motorBoardData_.volMain[2]<20.0)) {
+        ROS_INFO("Voltage is low. Please recharge batteries as soon as possible.");
       }
 
       sensor_msgs::Imu imuData;
@@ -332,7 +307,7 @@ class Jaguar_Controller_Node {
       // ROS_INFO("publish IMU sensor data");
         imu_pub_.publish(imuData);
 
-        ROS_INFO("compass x: %d, compass y: %d, compass z: %d", imuSensorData.comp_x, imuSensorData.comp_y, imuSensorData.comp_z);
+        //ROS_INFO("compass x: %d, compass y: %d, compass z: %d", imuSensorData.comp_x, imuSensorData.comp_y, imuSensorData.comp_z);
         //geometry_msgs::Vector3Stamped imuMagFieldData;
         //imuMagFieldData.header.seq = imuSensorData.seq;
         //imuMagFieldData.header.stamp = ros::Time::now();

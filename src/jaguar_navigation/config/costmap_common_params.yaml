@@ -1,0 +1,29 @@
+map_type: costmap
+#origin_z: 0.21
+z_resolution: 1
+z_voxels: 2
+
+robot_base_frame: /base_link # Indicates the transformation frame of the robot’s base link.
+
+obstacle_range: 4.0
+raytrace_range: 4.0
+
+publish_voxel_map: false
+transform_tolerance: 2.0
+meter_scoring: true
+
+# When you want a most precise representation of your robot, you have to comment the robot_radius parameter and create a custom footprint, considering [0, 0] as the center of your robot.
+footprint: [[-0.3,-0.3],[-0.3,0.3], [0.3, 0.3], [0.3,-0.3]]
+# Summed at each of the footprint points, both at the x and y coordinates.
+footprint_padding: 0.1
+
+plugins:
+- {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
+- {name: inflater_layer, type: "costmap_2d::InflationLayer"}
+
+obstacles_layer:
+  observation_sources: scan
+  scan: {sensor_frame: /laser_link, data_type: LaserScan, topic: /scan, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 4.0, raytrace_range: 4.0}
+
+inflater_layer:
+ inflation_radius: 0.1

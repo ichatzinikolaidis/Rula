@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="no_static_map" default="false"/>
+
+  	<arg name="rvizconfig" default="$(find jaguar_description)/launch/urdf_local.rviz"/>
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+</launch>

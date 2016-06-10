@@ -1,10 +1,13 @@
 <launch>
 	<!-- Laser node -->
     <node pkg="urg_node" name="urg_node" type="urg_node">
-        <param name="frame_id" value="/laser_link"/>
         <param name="ip_address" value="192.168.0.60"/>
         <param name="ip_port" value="10002"/>
+        <param name="frame_id" value="/laser_link"/>
+        <param name="caliberate_time" value="true"/>
+        <param name="publish_intensity" value="true"/>
         <param name="skip" value="5"/>
-        <param name="intensity" value="true" />
+        <param name="angle_min" value="-2.094"/>
+        <param name="angle_max" value="2.094"/>
     </node>
 </launch>
