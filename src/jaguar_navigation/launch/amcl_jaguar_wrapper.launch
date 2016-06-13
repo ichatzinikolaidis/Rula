@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 	<arg name="use_map_topic" default="true"/>
 
@@ -8,7 +9,7 @@
 	<include file="$(find jaguar_odometry)/launch/ekf_wheel_IMU_localization.launch"/>
 
     <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/inside.yaml"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/outside.yaml" output="screen"/>
 
     <!-- Run AMCL -->
 	<node pkg="amcl" type="amcl" name="amcl">
@@ -36,6 +37,7 @@
 		<param name="use_map_topic" value="$(arg use_map_topic)"/>
 		<!--  When set to true, AMCL will only use the first map it subscribes to, rather than updating each time a new one is received. -->
 		<param name="first_map_only" value="false"/> <!-- Default -->
+		<param name="tf_broadcast" value="true"/> <!-- Default -->
 	<!-- Laser model parameters -->
 		<param name="laser_min_range" value="0.02"/>
 		<param name="laser_max_range" value="4"/>
