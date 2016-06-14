@@ -29,7 +29,8 @@ private:
 	long deltaLF, deltaRF, deltaLR, deltaRR;
 	double left, right;
 	double d_LF, d_RF, d_LR, d_RR;
-	double velLeft, velRight, vx;
+
+	long velLeft, velRight, vx, vtheta;
 
 	double rate;
 	ros::Duration t_delta;
@@ -100,7 +101,7 @@ void Odometry_calc::init_variables() {
  
 	x_final = 0; y_final = 0; theta_final = 0;
 
-	velLeft = 0; velRight = 0; vx = 0;
+	velLeft = 0; velRight = 0; vx = 0; vtheta = 0;
 	
 	current_time = ros::Time::now();
   	last_time = ros::Time::now();
@@ -214,15 +215,15 @@ void Odometry_calc::update() {
 	odom.pose.covariance[35] = 0.01;
 
 	//set the velocity
-	odom.twist.twist.linear.x = linear / elapsed;
+	odom.twist.twist.linear.x = vx * 0.00386;
 	odom.twist.twist.linear.y = 0;
-	odom.twist.twist.angular.z = angular / elapsed;
-	odom.twist.covariance[0] = 100;
-	odom.twist.covariance[7] = 100;
+	odom.twist.twist.angular.z = vtheta * 0.00308 * 2;
+	odom.twist.covariance[0] = 10;
+	odom.twist.covariance[7] = 10;
 	odom.twist.covariance[14] = 1000000.0;
 	odom.twist.covariance[21] = 1000000.0;
 	odom.twist.covariance[28] = 1000000.0;
-	odom.twist.covariance[35] = 1000.0;
+	odom.twist.covariance[35] = 100.0;
 
 	//publish the message
 	odom_pub.publish(odom);
@@ -287,8 +288,8 @@ void Odometry_calc::encodersCb(const jaguar4x4::MotorDataArray::ConstPtr& ticks)
 	else {
 		velRight = velRR;
 	}
-	vx = (velLeft + velRight)*0.5;
-	ROS_INFO("Left side velocity: %f", vx);
+	vx = velRight + velLeft;
+	vtheta = velRight - velLeft;
 }
 
 // Left front encoder callback
