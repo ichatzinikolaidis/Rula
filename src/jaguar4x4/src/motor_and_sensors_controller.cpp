@@ -66,8 +66,9 @@ Publishes to (name / type):
 
 #include <DrRobotMotionSensorDriver.hpp>
 
-#define MOTOR_NUM           4       //max
-#define MOTOR_BOARD_NUM     3       //max
+#define MOTOR_NUM 4
+#define MOTOR_BOARD_NUM 3
+#define slope 500
 using namespace std;
 using namespace DrRobot_MotionSensorDriver;
 
@@ -212,12 +213,14 @@ class Jaguar_Controller_Node {
     }
 
     void cmdReceived(const geometry_msgs::Twist& msg) {
-        int linear_vel = round(msg.linear.x * 1000);
-        int angular_vel = round(msg.angular.z * 1000);
-        string p = "MMW !M ";
-        p += to_string(boost::algorithm::clamp(linear_vel - angular_vel, -1000, 1000)) + " " + to_string(boost::algorithm::clamp(-linear_vel - angular_vel, -1000, 1000));
-        int nLen = p.length();
-        drrobotMotionDriver_ -> sendCommand(p.c_str(), nLen); // Send command to robot
+      vx = boost::algorithm::clamp(msg.linear.x, -1.0, 1.0);
+      vtheta = boost::algorithm::clamp(msg.angular.z, -1.0, 1.0);
+      left_vel = round(((vx - vtheta)+2)*slope-1000);
+      right_vel = round(((-vx - vtheta)+2)*slope-1000);
+      string p = "MMW !M ";
+      p += to_string(left_vel) + " " + to_string(right_vel);
+      int nLen = p.length();
+      drrobotMotionDriver_ -> sendCommand(p.c_str(), nLen); // Send command to robot
     }
 
     void doUpdate() {
@@ -355,6 +358,9 @@ class Jaguar_Controller_Node {
     int motorDir_;
     double minSpeed_;
     double maxSpeed_;
+
+    int left_vel, right_vel;
+    double vx, vtheta;
 
     float average_angle_vel_x, average_angle_vel_y, average_angle_vel_z;
     int imu_roll_velocity_accumulator, imu_pitch_velocity_accumulator, imu_yaw_velocity_accumulator;
