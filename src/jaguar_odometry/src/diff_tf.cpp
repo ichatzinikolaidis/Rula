@@ -29,6 +29,7 @@ private:
 	long deltaLF, deltaRF, deltaLR, deltaRR;
 	double left, right;
 	double d_LF, d_RF, d_LR, d_RR;
+	double velLeft, velRight, vx;
 
 	double rate;
 	ros::Duration t_delta;
@@ -98,6 +99,8 @@ void Odometry_calc::init_variables() {
 	linear = 0; angular = 0;
  
 	x_final = 0; y_final = 0; theta_final = 0;
+
+	velLeft = 0; velRight = 0; vx = 0;
 	
 	current_time = ros::Time::now();
   	last_time = ros::Time::now();
@@ -267,6 +270,25 @@ void Odometry_calc::encodersCb(const jaguar4x4::MotorDataArray::ConstPtr& ticks)
 	right = (d_RF+d_RR)*0.5;
 	left *= ticks_meter;
 	right *= ticks_meter;
+
+	long velLF = ticks -> motorData[0].encoderDiff;
+	long velLR = ticks -> motorData[2].encoderDiff;
+	long velRF = -(ticks -> motorData[1].encoderDiff);
+	long velRR = -(ticks -> motorData[3].encoderDiff);
+	if (abs(velLF) < abs(velLR)) {
+		velLeft = velLF;
+	}
+	else {
+		velLeft = velLR;
+	}
+	if (abs(velRF) < abs(velRR)) {
+		velRight = velRF;
+	}
+	else {
+		velRight = velRR;
+	}
+	vx = (velLeft + velRight)*0.5;
+	ROS_INFO("Left side velocity: %f", vx);
 }
 
 // Left front encoder callback
