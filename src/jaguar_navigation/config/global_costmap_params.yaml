@@ -1,12 +1,8 @@
 global_costmap:
    global_frame: /map # Indicates the frame for the costmap to operate in.
-   #width: 40.0
-   #height: 40.0
-   #resolution: 0.05
-   #origin_x: -20.0
-   #origin_y: -20.0
    static_map: true # Indicates whether the system uses or not a static map.
-   rolling_window: false
+   rolling_window: false # Use a rolling window map.
+   track_unknown_space: true
 
    plugins:
    - {name: static_layer, type: "costmap_2d::StaticLayer"}

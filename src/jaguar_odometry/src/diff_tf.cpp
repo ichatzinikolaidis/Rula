@@ -207,23 +207,23 @@ void Odometry_calc::update() {
 	odom.pose.pose.position.y = y_final;
 	odom.pose.pose.position.z = 0.0;
 	odom.pose.pose.orientation = odom_quat;
-	odom.pose.covariance[0] = 0.01;
-	odom.pose.covariance[7] = 0.01;
-	odom.pose.covariance[14] = 1000000.0;
-	odom.pose.covariance[21] = 1000000.0;
-	odom.pose.covariance[28] = 1000000.0;
-	odom.pose.covariance[35] = 0.01;
+	odom.pose.covariance[0] = 0.001;
+	odom.pose.covariance[7] = 0.001;
+	odom.pose.covariance[14] = 0.001;
+	odom.pose.covariance[21] = 0.001;
+	odom.pose.covariance[28] = 0.001;
+	odom.pose.covariance[35] = 0.003;
 
 	//set the velocity
 	odom.twist.twist.linear.x = vx * 0.00386;
 	odom.twist.twist.linear.y = 0;
-	odom.twist.twist.angular.z = vtheta * 0.00308 * 2;
-	odom.twist.covariance[0] = 10;
-	odom.twist.covariance[7] = 10;
-	odom.twist.covariance[14] = 1000000.0;
-	odom.twist.covariance[21] = 1000000.0;
-	odom.twist.covariance[28] = 1000000.0;
-	odom.twist.covariance[35] = 100.0;
+	odom.twist.twist.angular.z = vtheta * 0.00308 * 4;
+	odom.twist.covariance[0] = 0.001;
+	odom.twist.covariance[7] = 0.001;
+	odom.twist.covariance[14] = 0.001;
+	odom.twist.covariance[21] = 0.001;
+	odom.twist.covariance[28] = 0.001;
+	odom.twist.covariance[35] = 0.003;
 
 	//publish the message
 	odom_pub.publish(odom);

@@ -68,7 +68,7 @@ Publishes to (name / type):
 
 #define MOTOR_NUM 4
 #define MOTOR_BOARD_NUM 3
-#define slope 500
+//#define slope 500
 using namespace std;
 using namespace DrRobot_MotionSensorDriver;
 
@@ -213,12 +213,21 @@ class Jaguar_Controller_Node {
     }
 
     void cmdReceived(const geometry_msgs::Twist& msg) {
-      vx = boost::algorithm::clamp(msg.linear.x, -1.0, 1.0);
-      vtheta = boost::algorithm::clamp(msg.angular.z, -1.0, 1.0);
-      left_vel = round(((vx - vtheta)+2)*slope-1000);
-      right_vel = round(((-vx - vtheta)+2)*slope-1000);
+      //vx = boost::algorithm::clamp(msg.linear.x, -1.0, 1.0);
+      //vtheta = boost::algorithm::clamp(msg.angular.z, -1.0, 1.0);
+      //left_vel = round(((vx - vtheta)+2)*slope-1000);
+      //right_vel = round(((-vx - vtheta)+2)*slope-1000);
+      left_vel = msg.linear.x - msg.angular.z;
+      right_vel = -msg.linear.x - msg.angular.z;
+      double large_speed = std::max(std::abs(left_vel), std::abs(right_vel));
+      if (large_speed > maxSpeed_) {
+        left_vel *= maxSpeed_ / large_speed;
+        right_vel *= maxSpeed_ / large_speed;
+      }
+      LEFT_vel = round(left_vel*1000);
+      RIGHT_vel = round(right_vel*1000);
       string p = "MMW !M ";
-      p += to_string(left_vel) + " " + to_string(right_vel);
+      p += to_string(LEFT_vel) + " " + to_string(RIGHT_vel);
       int nLen = p.length();
       drrobotMotionDriver_ -> sendCommand(p.c_str(), nLen); // Send command to robot
     }
@@ -359,7 +368,8 @@ class Jaguar_Controller_Node {
     double minSpeed_;
     double maxSpeed_;
 
-    int left_vel, right_vel;
+    double left_vel, right_vel;
+    int LEFT_vel, RIGHT_vel;
     double vx, vtheta;
 
     float average_angle_vel_x, average_angle_vel_y, average_angle_vel_z;

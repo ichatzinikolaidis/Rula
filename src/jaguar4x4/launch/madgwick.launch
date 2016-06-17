@@ -2,6 +2,9 @@
 	<!-- Motor, sensor, and laser node -->
 	<include file="$(find jaguar4x4)/launch/laser_node.launch"/>
 
+	<!-- Load robot description -->
+    <include file="$(find jaguar_description)/launch/robot_body_transformations.launch"/>
+
 	<!-- IMU madgwick filter node-->
 	<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_madgwick">
     	<param name="use_mag" value="false"/>

@@ -9,7 +9,7 @@
 	<include file="$(find jaguar_odometry)/launch/ekf_wheel_IMU_localization.launch"/>
 
     <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/smart_room.yaml" output="screen"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/outside.yaml" output="screen"/>
 
     <!-- Run AMCL -->
 	<node pkg="amcl" type="amcl" name="amcl">
@@ -24,10 +24,9 @@
 		<param name="update_min_a" value="0.2"/>
 		<param name="resample_interval" value="1"/>
 		<!-- Time with which to post-date the transform that is published, to indicate that this transform is valid into the future. -->
-		<param name="transform_tolerance" value="1.0"/> <!-- Default -->
+		<param name="transform_tolerance" value="0.1"/> <!-- Default -->
 		<!-- Number of filter updates required before resampling. -->
 		<param name="resample_interval" value="1"/>
-		<param name="transform_tolerance" value="0.1"/> <!-- Default -->
 		<!-- Exponential decay rate for the slow average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.001. -->
 		<param name="recovery_alpha_slow" value="0.001"/>
 		<!--Exponential decay rate for the fast average weight filter, used in deciding when to recover by adding random poses. A good value might be 0.1. -->

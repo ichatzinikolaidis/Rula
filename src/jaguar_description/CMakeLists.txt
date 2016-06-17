@@ -13,9 +13,3 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## The catkin_package macro generates cmake config files for your package
 catkin_package()
-
-## Declare a cpp executable
-#add_executable(static_odom_frame src/static_odom_frame.cpp)
-
-## Specify libraries to link a library or executable target against
-#target_link_libraries(static_odom_frame ${catkin_LIBRARIES})
