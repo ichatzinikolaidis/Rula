@@ -40,10 +40,10 @@
 
       	<!-- Each sensor reading updates some or all of the filter's state. These options give you greater control over which values from each measurement are fed to the filter. For example, if you have an odometry message as input, but only want to use its Z position value, then set the entire vector to false, except for the third entry. The order of the values is x, y, z, roll, pitch, yaw, vx, vy, vz, vroll, vpitch, vyaw, ax, ay, az. Note that not some message types lack certain variables. For example, a TwistWithCovarianceStamped message has no pose information, so the first six values would be meaningless in that case. Each vector defaults to all false if unspecified, effectively making this parameter required for each sensor. -->
       	<rosparam param="odom0_config">
-            [ true,  true, false,
-             false, false, true,
-              true,  true, true,
-             false, false, true,
+            [false, false, false,
+             false, false, false,
+              true,  true,  true,
+             false, false,  true,
              false, false, false]
         </rosparam>
       	<rosparam param="imu0_config">
@@ -55,12 +55,12 @@
         </rosparam>
 
       	<!-- The best practice for including new sensors in robot_localization's state estimation nodes is to pass in velocity measurements and let the nodes integrate them. However, this isn't always feasible, and so the state estimation nodes support fusion of absolute measurements. If you have more than one sensor providing absolute measurements, however, you may run into problems if your covariances are not large enough, as the sensors will inevitably diverge from one another, causing the filter to jump back and forth rapidly. To combat this situation, you can either increase the covariances for the variables in question, or you can simply set the sensor's differential parameter to true. When differential mode is enabled, all absolute pose data is converted to velocity data by differentiating the absolute pose measurements. These velocities are then integrated as usual. NOTE: this only applies to sensors that provide absolute measurements, so setting differential to true for twit measurements has no effect. Users should take care when setting this to true for orientation variables: if you have only one source of absolute orientation data, you should not set the differential parameter to true. This is due to the fact that integration of velocities leads to slowly increasing error in the absolute (pose) variable. For position variables, this is acceptable. For orientation variables, it can lead to trouble. Users should make sure that all orientation variables have at least one source of absolute measurement. -->
-      	<param name="odom0_differential" value="true"/>
-      	<param name="imu0_differential" value="true"/>
+      	<param name="odom0_differential" value="false"/>
+      	<param name="imu0_differential" value="false"/>
 
       	<!-- When the node starts, if this parameter is true, then the first measurement is treated as a "zero point" for all future measurements. While you can achieve the same effect with the differential paremeter, the key difference is that the relative parameter doesn't cause the measurement to be converted to a velocity before integrating it. If you simply want your measurements to start at 0 for a given sensor, set this to true. -->
       	<param name="odom0_relative" value="false"/>
-      	<param name="imu0_relative" value="true"/>
+      	<param name="imu0_relative" value="false"/>
 
       	<!-- If we're including accelerations in our state estimate, then we'll probably want to remove any acceleration that is due to gravity for each IMU. If you don't want to, then set this to false. Defaults to false if unspecified. -->
       	<param name="imu0_remove_gravitational_acceleration" value="true"/>
