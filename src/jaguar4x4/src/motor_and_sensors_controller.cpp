@@ -260,7 +260,7 @@ class Jaguar_Controller_Node {
       motorBoardInfoArray.motorBoardInfo.resize(MOTOR_BOARD_NUM);
       for (uint32_t i = 0 ; i < MOTOR_BOARD_NUM; ++i) {
         motorBoardInfoArray.motorBoardInfo[i].header.stamp = ros::Time::now();
-        motorBoardInfoArray.motorBoardInfo[i].header.frame_id = string("drrobot_motor_");
+        motorBoardInfoArray.motorBoardInfo[i].header.frame_id = string("drrobot_battery_");
         motorBoardInfoArray.motorBoardInfo[i].header.frame_id += boost::lexical_cast<std::string>(i);
 
         motorBoardInfoArray.motorBoardInfo[i].status = motorBoardData_.status[i];

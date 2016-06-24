@@ -13,158 +13,157 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <robot name="jaguar_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- Included URDF/XACRO Files -->
+    <xacro:include filename="$(find jaguar_description)/urdf/wheel.urdf.xacro"/>
 
-  <!-- Included URDF/XACRO Files -->
-  <xacro:include filename="$(find jaguar_description)/urdf/wheel.urdf.xacro"/>
+    <property name="M_PI" value="3.14159"/>
 
-  <property name="M_PI" value="3.14159"/>
+    <!-- Wheel Properties -->
+    <xacro:property name="wheel_length" value="0.09"/>
+    <xacro:property name="wheel_radius" value="0.13"/>
 
-  <!-- Wheel Properties -->
-  <xacro:property name="wheel_length" value="0.09" /> <!-- TODO -->
-  <xacro:property name="wheel_radius" value="0.13" /> <!-- TODO -->
+    <!-- Base Size -->
+    <property name="distance_from_ground" value="0.09"/>
+    <property name="wheel_base_offset" value="0.03"/>
+    <property name="base_x_size" value="${0.615-2*wheel_base_offset}"/>
+    <property name="base_y_size" value="${0.573-wheel_length}"/>
+    <property name="base_z_size" value="${0.265-distance_from_ground}"/>
 
-  <!-- Base Size -->
-  <property name="distance_from_ground" value="0.09" /> <!-- TODO -->
-  <property name="wheel_base_offset" value="0.03" /> <!-- TODO -->
-  <property name="base_x_size" value="${0.615-2*wheel_base_offset}" />
-  <property name="base_y_size" value="${0.573-wheel_length}" />
-  <property name="base_z_size" value="${0.265-distance_from_ground}" />
+    <!-- Wheel Mounting Positions -->
+    <xacro:property name="wheelbase" value="${base_x_size-2*wheel_radius+2*wheel_base_offset}"/>
+    <xacro:property name="track" value="${base_y_size+wheel_length}"/>
+    <xacro:property name="wheel_vertical_offset" value="${wheel_radius}"/>
 
-  <!-- Wheel Mounting Positions -->
-  <xacro:property name="wheelbase" value="${base_x_size-2*wheel_radius+2*wheel_base_offset}" />
-  <xacro:property name="track" value="${base_y_size+wheel_length}" />
-  <xacro:property name="wheel_vertical_offset" value="${wheel_radius}" /> <!-- TODO -->
+    <!-- Laser Position -->
+    <property name="laser_x" value="${base_x_size/2-0.0725}"/>
+    <property name="laser_y" value="0"/>
+    <property name="laser_z" value="${0.265+0.05}"/>
 
-  <!-- Laser Position -->
-  <property name="laser_x" value="${base_x_size/2-0.0725}" /> <!-- TODO -->
-  <property name="laser_y" value="0" /> 
-  <property name="laser_z" value="${0.265+0.05}" /> <!-- TODO -->
+    <!-- Laser Size -->
+    <property name="laser_x_size" value="0.065"/>
+    <property name="laser_y_size" value="0.09"/>
+    <property name="laser_z_size" value="0.1"/>
 
-  <!-- Laser Size -->
-  <property name="laser_x_size" value="0.065" /> <!-- TODO -->
-  <property name="laser_y_size" value="0.09" /> <!-- TODO -->
-  <property name="laser_z_size" value="0.1" /> <!-- TODO -->
+    <!-- Camera Position -->
+    <property name="camera_x" value="${base_x_size/2}"/>
+    <property name="camera_y" value="-0.045"/>
+    <property name="camera_z" value="0.15"/>
 
-  <!-- Camera Position -->
-  <property name="camera_x" value="${base_x_size/2}" /> <!-- TODO -->
-  <property name="camera_y" value="-0.045" /> <!-- TODO -->
-  <property name="camera_z" value="0.15" /> <!-- TODO -->
+    <!-- Camera Size -->
+    <property name="camera_radius" value="${0.025/2}"/>
+    <property name="camera_length" value="0.01"/>
 
-  <!-- Laser Size -->
-  <property name="camera_radius" value="${0.025/2}" /> <!-- TODO -->
-  <property name="camera_length" value="0.01" /> <!-- TODO -->
+    <!-- Base link is the center of the robot's bottom plate -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 0.8"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+            </geometry>
+        </collision>
+    </link>
 
-  <!-- Base link is the center of the robot's bottom plate -->
-  <link name="base_link">
-    <visual>
-      <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0" />
-      <geometry>
-        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0 0 0 0.8"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 ${2*distance_from_ground}" rpy="0 0 0" /> <!-- TODO -->
-      <geometry>
-        <box size="${base_x_size} ${base_y_size} ${base_z_size}"/> <!-- TODO -->
-      </geometry>
-    </collision>
-  </link>
+    <!-- Interial link stores the robot's inertial information -->
+    <!--<link name="inertial_link">
+        <inertial>
+            <mass value="33.455"/>
+            <origin xyz="-0.08748 -0.00085 0.09947"/>
+            <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296"/>
+        </inertial>
+    </link>
+    <joint name="inertial_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="inertial_link"/>
+    </joint> -->
 
-  <!-- Interial link stores the robot's inertial information -->
-  <link name="inertial_link">
-    <inertial>
-      <mass value="33.455" /> <!-- TODO -->
-      <origin xyz="-0.08748 -0.00085 0.09947" /> <!-- TODO -->
-      <inertia ixx="0.6022" ixy="-0.02364" ixz="-0.1197" iyy="1.7386" iyz="-0.001544" izz="2.0296" /> <!-- TODO -->
-    </inertial>
-  </link>
-  <joint name="inertial_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="inertial_link" />
-  </joint>
+    <!-- IMU exact position is unnecessary thus placed at the center of the platform.-->
+    <link name="imu_link"/>
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="0 0 ${base_z_size}" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+    </joint>
 
-  <!-- IMU Link's exact position is unnecessary thus placed at the center of the platform.-->
-  <link name="imu_link"/>
-  <joint name="imu_joint" type="fixed">
-    <origin xyz="0 0 ${base_z_size}" rpy="0 0 0" /> <!-- TODO -->
-    <parent link="base_link" />
-    <child link="imu_link" />
-  </joint>
+    <!-- Jaguar wheel macros -->
+    <xacro:jaguar_wheel wheel_prefix="front_left">
+        <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0"/>
+    </xacro:jaguar_wheel>
+    <xacro:jaguar_wheel wheel_prefix="front_right">
+        <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 ${M_PI}"/>
+    </xacro:jaguar_wheel>
+    <xacro:jaguar_wheel wheel_prefix="rear_left">
+        <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0"/>
+    </xacro:jaguar_wheel>
+    <xacro:jaguar_wheel wheel_prefix="rear_right">
+        <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 ${M_PI}"/>
+    </xacro:jaguar_wheel>
 
-  <!-- Jaguar wheel macros -->
-  <xacro:jaguar_wheel wheel_prefix="front_left">
-    <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-  </xacro:jaguar_wheel>
-  <xacro:jaguar_wheel wheel_prefix="front_right">
-    <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 ${M_PI}" />
-  </xacro:jaguar_wheel>
-  <xacro:jaguar_wheel wheel_prefix="rear_left">
-    <origin xyz="${-wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
-  </xacro:jaguar_wheel>
-  <xacro:jaguar_wheel wheel_prefix="rear_right">
-    <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 ${M_PI}" />
-  </xacro:jaguar_wheel>
-  
-  <!-- Laser -->
-  <joint name="laser_joint" type="fixed">
-    <origin xyz="${laser_x} ${laser_y} ${laser_z}" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="laser_link" />
-  </joint>
+    <!-- Laser -->
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="${laser_x} ${laser_y} ${laser_z}" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="laser_link"/>
+    </joint>
 
-  <link name="laser_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <box size="${laser_x_size} ${laser_y_size} ${laser_z_size}"/>
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 255 0.8"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <box size="${laser_x_size} ${laser_y_size} ${laser_z_size}"/>
-      </geometry>
-    </collision>
-  </link>
+    <link name="laser_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="${laser_x_size} ${laser_y_size} ${laser_z_size}"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 255 0.8"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="${laser_x_size} ${laser_y_size} ${laser_z_size}"/>
+            </geometry>
+        </collision>
+    </link>
 
-  <!-- Camera -->
-  <joint name="camera_joint" type="fixed">
-    <origin xyz="${camera_x} ${camera_y} ${camera_z}" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="camera_link" />
-  </joint>
+    <!-- Camera -->
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="${camera_x} ${camera_y} ${camera_z}" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+    </joint>
 
-  <link name="camera_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 ${M_PI/2} 0" />
-      <geometry>
-        <cylinder length="${camera_length}" radius="${camera_radius}" />
-      </geometry>
-      <material name="red">
-        <color rgba="255 0 0 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 ${M_PI/2} 0" />
-      <geometry>
-        <cylinder length="0.1" radius="${0.025/2}" />
-      </geometry>
-    </collision>
-  </link>
+    <link name="camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 ${M_PI/2} 0"/>
+            <geometry>
+                <cylinder length="${camera_length}" radius="${camera_radius}"/>
+            </geometry>
+            <material name="red">
+                <color rgba="255 0 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 ${M_PI/2} 0"/>
+            <geometry>
+                <cylinder length="0.1" radius="${0.025/2}"/>
+            </geometry>
+        </collision>
+    </link>
 
-  <!-- GPS -->
-  <joint name="gps_joint" type="fixed">
-    <origin xyz="0 0 ${base_z_size}" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="gps_link" />
-  </joint>
+    <!-- GPS exact position is unnecessary thus placed at the center of the platform. -->
+    <joint name="gps_joint" type="fixed">
+        <origin xyz="0 0 ${base_z_size}" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="gps_link"/>
+    </joint>
 
-  <link name="gps_link" />
+    <link name="gps_link"/>
 </robot>
