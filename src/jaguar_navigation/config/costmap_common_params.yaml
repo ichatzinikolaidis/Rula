@@ -7,7 +7,7 @@ robot_base_frame: /base_link # Default.
 # The frequency in Hz for the map to be updated.
 update_frequency: 10.0 # Default.
 # The frequency in Hz for the map to be publish display information.
-publish_frequency: 1.0
+publish_frequency: 5.0
 # Specifies the delay in transform (tf) data that is tolerable in seconds.
 transform_tolerance: 0.5
 
@@ -23,12 +23,12 @@ footprint: [[-0.3,-0.3],[-0.3,0.3], [0.3, 0.3], [0.3,-0.3]]
 footprint_padding: 0.1
 
 plugins:
-#  - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
+  - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
   - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
 
-#obstacles_layer:
-#  observation_sources: scan
-#  scan: {sensor_frame: /laser_link, data_type: LaserScan, topic: /scan, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 3.5, raytrace_range: 4.0, inf_is_valid: true}
+obstacles_layer:
+  observation_sources: scan
+  scan: {sensor_frame: /laser_link, data_type: LaserScan, topic: /scan, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 3.5, raytrace_range: 4.0, inf_is_valid: true}
 
 inflater_layer:
- inflation_radius: 0.2
+ inflation_radius: 0.1

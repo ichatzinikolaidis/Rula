@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <launch>
-	<arg name="rvizconfig" default="$(find jaguar_description)/launch/urdf_local.rviz"/>
+	<!-- Load robot description -->
+    <include file="$(find jaguar_description)/launch/robot_body_transformations.launch"/>
+
+    <!-- Open rviz with the compatible configuration file -->
+	<arg name="rvizconfig" default="$(find jaguar_description)/launch/rula-config.rviz"/>
   	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
 </launch>

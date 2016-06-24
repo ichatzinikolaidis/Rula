@@ -9,7 +9,7 @@
 	<include file="$(find jaguar_odometry)/launch/ekf_wheel_IMU_localization.launch"/>
 
     <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/outside.yaml" output="screen"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find jaguar_navigation)/maps/inside.yaml" output="screen"/>
 
     <!-- Run AMCL -->
 	<node pkg="amcl" type="amcl" name="amcl">

@@ -11,6 +11,8 @@
         <param name="angle_max" value="2.094"/>
         <remap from="scan" to="base_scan" />
     </node>
+
+    <!-- Laser filters -->
     <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
         <rosparam command="load" file="$(find jaguar4x4)/config/laser_config.yaml" />
         <remap from="scan" to="base_scan" />
